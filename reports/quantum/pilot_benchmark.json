@@ -1,0 +1,30 @@
+{
+  "pilot_sample_size": 10,
+  "pilot_elapsed_seconds": 0.0223,
+  "time_per_sample_seconds": 0.002226,
+  "validation_diagnostics": {
+    "shape": [
+      10,
+      10
+    ],
+    "is_finite": true,
+    "min_value": 0.014028952814359683,
+    "max_value": 1.0,
+    "values_in_unit_interval": true,
+    "is_symmetric": true,
+    "max_symmetry_discrepancy": 0.0,
+    "diagonal_is_one": true,
+    "max_diagonal_discrepancy": 0.0,
+    "min_eigenvalue": 0.022030574125664427,
+    "is_positive_semi_definite": true,
+    "is_valid": true
+  },
+  "projected_full_experiment": {
+    "full_n_train": 500,
+    "full_n_val": 20000,
+    "estimated_train_kernel_seconds": 1.16,
+    "estimated_val_kernel_seconds": 44.58,
+    "estimated_total_runtime_seconds": 45.74,
+    "estimated_total_runtime_minutes": 0.76
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "pipeline_version": "phase-2-preprocessing-v1",
+  "random_state": 42,
+  "test_size": 0.2,
+  "scaler_type": "robust",
+  "initial_rows": 284807,
+  "final_rows": 283726,
+  "duplicate_handling": {
+    "total_duplicates": 1081,
+    "duplicate_percentage": 0.3796,
+    "duplicates_by_class": {
+      "legitimate (0)": 1062,
+      "fraudulent (1)": 19
+    },
+    "strategy": "drop_first"
+  },
+  "feature_count": 30,
+  "feature_names": [
+    "Time",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ],
+  "target_col": "Class",
+  "splits": {
+    "train": {
+      "total_samples": 226980,
+      "legitimate_count": 226602,
+      "fraud_count": 378,
+      "fraud_percentage": 0.1665
+    },
+    "test": {
+      "total_samples": 56746,
+      "legitimate_count": 56651,
+      "fraud_count": 95,
+      "fraud_percentage": 0.1674
+    }
+  }
+}

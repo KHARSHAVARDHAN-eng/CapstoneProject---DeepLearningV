@@ -1,0 +1,7 @@
+model_key,model_name,holdout_pr_auc,holdout_roc_auc,default_precision,default_recall,default_f1,default_fp,calibrated_threshold_r20,calibrated_precision,calibrated_recall,calibrated_f1,calibrated_fp,latency_ms_per_sample
+classical_linear_svm,Classical Linear SVM (6 features),0.6434,0.9285,0.1095,0.8,0.1926,618,0.1867,0.2153,0.8,0.3393,277,0.00013
+classical_rbf_svm,"Classical RBF SVM (C=5, γ=0.01)",0.6577,0.9284,0.6887,0.7684,0.7264,33,-0.2785,0.4335,0.7895,0.5597,98,0.00371
+canonical_qsvm,"Canonical QSVM (ZZ-FeatureMap, reps=1)",0.5568,0.938,0.0949,0.8,0.1696,725,0.18,0.121,0.8,0.2102,552,0.82868
+opt_separable_qsvm,Optimized Separable QSVM (β=0.50),0.6098,0.9276,0.7374,0.7684,0.7526,26,-0.3576,0.463,0.7895,0.5837,87,0.07147
+anisotropic_separable_qsvm,Anisotropic Separable QSVM (Feature Weighted),0.6414,0.9257,0.4688,0.7895,0.5882,85,-0.1987,0.2444,0.8,0.3744,235,0.04485
+projected_quantum_kernel,"Projected Quantum Kernel (PQK, γ=0.10)",0.6146,0.9289,0.18,0.7789,0.2925,337,0.1674,0.2526,0.7684,0.3802,216,0.27719

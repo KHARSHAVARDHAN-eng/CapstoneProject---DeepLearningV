@@ -1,0 +1,85 @@
+{
+  "experiment_name": "Phase 4B: Quantum Kernel SVM and Matched Classical Controls",
+  "timestamp": "2026-10-11T16:02:11Z",
+  "configuration": {
+    "qubit_count": 6,
+    "feature_selection": "SelectKBest(f_classif, k=6)",
+    "selected_features": [
+      "V4",
+      "V10",
+      "V11",
+      "V12",
+      "V14",
+      "V16"
+    ],
+    "feature_map": "ZZFeatureMap(reps=2, entanglement='linear')",
+    "kernel": "FidelityQuantumKernel (Pure-State Exact Simulation)",
+    "simulator": "Qiskit Statevector Simulator (exact statevector caching)",
+    "random_seed": 42,
+    "train_samples": 500,
+    "train_fraud_samples": 100,
+    "val_samples": 20000,
+    "val_fraud_samples": 33
+  },
+  "timings": {
+    "pilot_benchmark_seconds": 0.0223,
+    "train_kernel_seconds": 0.7712,
+    "val_kernel_seconds": 27.1819,
+    "qsvm_training_seconds": 0.0051,
+    "qsvm_inference_seconds": 0.0388,
+    "linear_svm_training_seconds": 0.0032,
+    "linear_svm_inference_seconds": 0.0016,
+    "rbf_svm_training_seconds": 0.002,
+    "rbf_svm_inference_seconds": 0.1089
+  },
+  "results": {
+    "qsvm": {
+      "confusion_matrix": {
+        "true_negatives": 19508,
+        "false_positives": 459,
+        "false_negatives": 4,
+        "true_positives": 29
+      },
+      "precision": 0.0594,
+      "recall": 0.8788,
+      "f1_score": 0.1113,
+      "specificity": 0.977,
+      "balanced_accuracy": 0.9279,
+      "pr_auc": 0.6206,
+      "roc_auc": 0.9606,
+      "classification_report_str": "                precision    recall  f1-score   support\n\nLegitimate (0)     0.9998    0.9770    0.9883     19967\n     Fraud (1)     0.0594    0.8788    0.1113        33\n\n      accuracy                         0.9768     20000\n     macro avg     0.5296    0.9279    0.5498     20000\n  weighted avg     0.9982    0.9768    0.9868     20000\n"
+    },
+    "linear_svm": {
+      "confusion_matrix": {
+        "true_negatives": 19757,
+        "false_positives": 210,
+        "false_negatives": 4,
+        "true_positives": 29
+      },
+      "precision": 0.1213,
+      "recall": 0.8788,
+      "f1_score": 0.2132,
+      "specificity": 0.9895,
+      "balanced_accuracy": 0.9341,
+      "pr_auc": 0.8171,
+      "roc_auc": 0.979,
+      "classification_report_str": "                precision    recall  f1-score   support\n\nLegitimate (0)     0.9998    0.9895    0.9946     19967\n     Fraud (1)     0.1213    0.8788    0.2132        33\n\n      accuracy                         0.9893     20000\n     macro avg     0.5606    0.9341    0.6039     20000\n  weighted avg     0.9983    0.9893    0.9933     20000\n"
+    },
+    "rbf_svm": {
+      "confusion_matrix": {
+        "true_negatives": 19881,
+        "false_positives": 86,
+        "false_negatives": 4,
+        "true_positives": 29
+      },
+      "precision": 0.2522,
+      "recall": 0.8788,
+      "f1_score": 0.3919,
+      "specificity": 0.9957,
+      "balanced_accuracy": 0.9372,
+      "pr_auc": 0.8012,
+      "roc_auc": 0.9819,
+      "classification_report_str": "                precision    recall  f1-score   support\n\nLegitimate (0)     0.9998    0.9957    0.9977     19967\n     Fraud (1)     0.2522    0.8788    0.3919        33\n\n      accuracy                         0.9955     20000\n     macro avg     0.6260    0.9372    0.6948     20000\n  weighted avg     0.9986    0.9955    0.9967     20000\n"
+    }
+  }
+}

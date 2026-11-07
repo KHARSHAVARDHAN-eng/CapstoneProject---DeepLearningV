@@ -1,0 +1,849 @@
+{
+  "manifest": {
+    "manifest_version": "2.0 (Threshold Corrected)",
+    "timestamp_utc": "2026-10-12 07:49:35 UTC",
+    "status": "FROZEN_VALIDATION_CALIBRATED",
+    "models": {
+      "tuned_linear_svm": {
+        "path": "/Users/harsha/Desktop/quantum-fraud-detection(Capstone)/models/quantum/tuned_linear_svm.joblib",
+        "sha256": "c03269e69de6f94013f14cfeb840e763b8d4b4c3818f3f873ecd0e4d25295c4b",
+        "hyperparameters": {
+          "C": 5.0,
+          "random_state": 42
+        },
+        "expected_phase5_cv_pr_auc": 0.9630071191305412,
+        "n_features": 6
+      },
+      "tuned_rbf_svm": {
+        "path": "/Users/harsha/Desktop/quantum-fraud-detection(Capstone)/models/quantum/tuned_rbf_svm.joblib",
+        "sha256": "bb71fe9d10f935c1a52a758a3f04b56af89470a38ddb81a91153e57d57a6975e",
+        "hyperparameters": {
+          "C": 5.0,
+          "gamma": 0.01,
+          "random_state": 42
+        },
+        "expected_phase5_cv_pr_auc": 0.9676461795514429,
+        "n_features": 6
+      },
+      "tuned_qsvm": {
+        "path": "/Users/harsha/Desktop/quantum-fraud-detection(Capstone)/models/quantum/tuned_qsvm.joblib",
+        "sha256": "dfa4bc6faf2f69b36e7e4f40fe95240db03cea9fca2665f49ad0fd28c4591c6f",
+        "hyperparameters": {
+          "C": 0.5,
+          "kernel": "precomputed",
+          "random_state": 42
+        },
+        "expected_phase5_cv_pr_auc": 0.937644548472622,
+        "n_features": 6
+      },
+      "historical_classical_svm_30f": {
+        "path": "/Users/harsha/Desktop/quantum-fraud-detection(Capstone)/models/classical_svm.joblib",
+        "sha256": "7573db12cd04dfcfb0a44ed05f0e5373841bc1253e11acc270019e9c62229b3e",
+        "n_features": 30,
+        "training_samples": 226980,
+        "holdout_evaluation_status": "HISTORICAL_BASELINE_REUSE_DISCLOSED",
+        "disclosure": "The 30-feature Classical SVM was trained on 226,980 samples in Phase 3 and evaluated on the holdout test set (56,746 samples) in Phase 3. It is included strictly as a historical benchmark for context. The three 6-feature models are evaluated on this holdout for the first time."
+      }
+    },
+    "preprocessing": {
+      "feature_selector": {
+        "path": "/Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/feature_selector.joblib",
+        "sha256": "57a95cffdcd46692534b1d32369973c9639aed0231e0c77032fa6f8553257290",
+        "selected_features": [
+          "V4",
+          "V10",
+          "V11",
+          "V12",
+          "V14",
+          "V16"
+        ]
+      },
+      "angle_scaler": {
+        "path": "/Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/angle_scaler.joblib",
+        "sha256": "3f5ba77aeab2fae9f8de55142c37d2a2e5ddce46ddaf71f3553b86ae612c1245",
+        "target_range": [
+          0.0,
+          3.141592653589793
+        ]
+      },
+      "training_subset": {
+        "X_train_path": "/Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/X_train_q_scaled.csv",
+        "X_train_sha256": "631aed41c30ef34fd0dda5de71e6fc406dc9b346b560593c1465998c0a5c1768",
+        "y_train_path": "/Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/y_train_q.csv",
+        "y_train_sha256": "0210e9022fc8e30da2eb68788c91a807bc8e220f9b7558b728ef101e2288b01e",
+        "total_samples": 500,
+        "legitimate_samples": 400,
+        "fraud_samples": 100
+      },
+      "quantum_feature_map": {
+        "circuit_type": "ZZFeatureMap",
+        "qubits": 6,
+        "reps": 2,
+        "entanglement": "linear",
+        "kernel_type": "exact_fidelity_statevector"
+      }
+    },
+    "frozen_decision_cutoffs": {
+      "default": 0.0,
+      "cost_optimal_by_scenario_ratio": {
+        "linear_svm": {
+          "5": 1.024647146669654,
+          "20": 1.024647146669654,
+          "50": 1.024647146669654,
+          "100": 1.024647146669654
+        },
+        "rbf_svm": {
+          "5": 0.46556977680855716,
+          "20": 0.46556977680855716,
+          "50": 0.46556977680855716,
+          "100": 0.46556977680855716
+        },
+        "qsvm": {
+          "5": 0.8651196039043426,
+          "20": 0.718022101882898,
+          "50": 0.718022101882898,
+          "100": 0.718022101882898
+        }
+      }
+    },
+    "audit_provenance_trail": {
+      "initial_phase4b_baseline_cutoffs_audit": {
+        "qsvm": {
+          "5": 0.8178322895666394,
+          "20": 0.6508975683647589,
+          "50": 0.6508975683647589,
+          "100": 0.6508975683647589
+        },
+        "linear_svm": {
+          "5": 1.094219893382241,
+          "20": 1.094219893382241,
+          "50": 0.5305348668407905,
+          "100": 0.5305348668407905
+        },
+        "rbf_svm": {
+          "5": 0.7292233022108354,
+          "20": 0.7292233022108354,
+          "50": 0.7292233022108354,
+          "100": 0.7292233022108354
+        }
+      },
+      "correction_rationale": "Initial cutoffs in phase5_metrics.json were computed on predictions_validation.csv from Phase 4B baseline C=1.0 models. Recalibrated to actual decision scores of tuned models on X_val_q_scaled.csv (N=20,000) with zero holdout test data access.",
+      "validation_performance_at_corrected_cutoffs": {
+        "linear_svm": {
+          "5": {
+            "cost_ratio_R": 5.0,
+            "c_fp": 10.0,
+            "c_fn": 50.0,
+            "optimal_threshold": 1.024647146669654,
+            "minimized_scenario_loss": 270.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.8055555555555556,
+            "false_positives": 7,
+            "false_negatives": 4,
+            "true_positives": 29
+          },
+          "20": {
+            "cost_ratio_R": 20.0,
+            "c_fp": 10.0,
+            "c_fn": 200.0,
+            "optimal_threshold": 1.024647146669654,
+            "minimized_scenario_loss": 870.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.8055555555555556,
+            "false_positives": 7,
+            "false_negatives": 4,
+            "true_positives": 29
+          },
+          "50": {
+            "cost_ratio_R": 50.0,
+            "c_fp": 10.0,
+            "c_fn": 500.0,
+            "optimal_threshold": 1.024647146669654,
+            "minimized_scenario_loss": 2070.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.8055555555555556,
+            "false_positives": 7,
+            "false_negatives": 4,
+            "true_positives": 29
+          },
+          "100": {
+            "cost_ratio_R": 100.0,
+            "c_fp": 10.0,
+            "c_fn": 1000.0,
+            "optimal_threshold": 1.024647146669654,
+            "minimized_scenario_loss": 4070.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.8055555555555556,
+            "false_positives": 7,
+            "false_negatives": 4,
+            "true_positives": 29
+          }
+        },
+        "rbf_svm": {
+          "5": {
+            "cost_ratio_R": 5.0,
+            "c_fp": 10.0,
+            "c_fn": 50.0,
+            "optimal_threshold": 0.46556977680855716,
+            "minimized_scenario_loss": 270.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.8055555555555556,
+            "false_positives": 7,
+            "false_negatives": 4,
+            "true_positives": 29
+          },
+          "20": {
+            "cost_ratio_R": 20.0,
+            "c_fp": 10.0,
+            "c_fn": 200.0,
+            "optimal_threshold": 0.46556977680855716,
+            "minimized_scenario_loss": 870.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.8055555555555556,
+            "false_positives": 7,
+            "false_negatives": 4,
+            "true_positives": 29
+          },
+          "50": {
+            "cost_ratio_R": 50.0,
+            "c_fp": 10.0,
+            "c_fn": 500.0,
+            "optimal_threshold": 0.46556977680855716,
+            "minimized_scenario_loss": 2070.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.8055555555555556,
+            "false_positives": 7,
+            "false_negatives": 4,
+            "true_positives": 29
+          },
+          "100": {
+            "cost_ratio_R": 100.0,
+            "c_fp": 10.0,
+            "c_fn": 1000.0,
+            "optimal_threshold": 0.46556977680855716,
+            "minimized_scenario_loss": 4070.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.8055555555555556,
+            "false_positives": 7,
+            "false_negatives": 4,
+            "true_positives": 29
+          }
+        },
+        "qsvm": {
+          "5": {
+            "cost_ratio_R": 5.0,
+            "c_fp": 10.0,
+            "c_fn": 50.0,
+            "optimal_threshold": 0.8651196039043426,
+            "minimized_scenario_loss": 440.0,
+            "resulting_recall": 0.8181818181818182,
+            "resulting_recall_fraction": "27/33",
+            "resulting_precision": 0.6585365853658537,
+            "false_positives": 14,
+            "false_negatives": 6,
+            "true_positives": 27
+          },
+          "20": {
+            "cost_ratio_R": 20.0,
+            "c_fp": 10.0,
+            "c_fn": 200.0,
+            "optimal_threshold": 0.718022101882898,
+            "minimized_scenario_loss": 1190.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.4264705882352941,
+            "false_positives": 39,
+            "false_negatives": 4,
+            "true_positives": 29
+          },
+          "50": {
+            "cost_ratio_R": 50.0,
+            "c_fp": 10.0,
+            "c_fn": 500.0,
+            "optimal_threshold": 0.718022101882898,
+            "minimized_scenario_loss": 2390.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.4264705882352941,
+            "false_positives": 39,
+            "false_negatives": 4,
+            "true_positives": 29
+          },
+          "100": {
+            "cost_ratio_R": 100.0,
+            "c_fp": 10.0,
+            "c_fn": 1000.0,
+            "optimal_threshold": 0.718022101882898,
+            "minimized_scenario_loss": 4390.0,
+            "resulting_recall": 0.8787878787878788,
+            "resulting_recall_fraction": "29/33",
+            "resulting_precision": 0.4264705882352941,
+            "false_positives": 39,
+            "false_negatives": 4,
+            "true_positives": 29
+          }
+        }
+      }
+    },
+    "evaluation_protocol": {
+      "test_set_fitting_permitted": false,
+      "hyperparameter_adaptation_permitted": false,
+      "threshold_retuning_on_holdout_permitted": false
+    }
+  },
+  "pilot_benchmark": {
+    "n_samples": 100,
+    "statevector_computation_seconds": 0.1255,
+    "matmul_computation_seconds": 0.000499,
+    "total_elapsed_seconds": 0.126,
+    "measured_throughput_samples_per_sec": 793.56,
+    "average_time_per_sample_ms": 1.26,
+    "memory_implications": {
+      "batch_statevector_mb": 0.0977,
+      "batch_kernel_mb": 0.3815,
+      "projected_full_test_kernel_mb": 216.47
+    },
+    "validation_diagnostics": {
+      "shape": [
+        100,
+        500
+      ],
+      "is_finite": true,
+      "min_value": 4.896201408202273e-06,
+      "max_value": 0.9991169101404025,
+      "values_in_unit_interval": true,
+      "is_valid": true
+    }
+  },
+  "kernel_computation": {
+    "source": "restored_from_checkpoint",
+    "checkpoint_path": "/Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/K_test.npy",
+    "total_elapsed_seconds": 76.06,
+    "throughput_samples_per_sec": 746.06,
+    "average_ms_per_sample": 1.34,
+    "diagnostics": {
+      "shape": [
+        56746,
+        500
+      ],
+      "is_finite": true,
+      "min_value": 4.9046104686805405e-09,
+      "max_value": 0.9999999999999973,
+      "values_in_unit_interval": true,
+      "is_valid": true
+    }
+  },
+  "metrics_results": {
+    "classical_svm_30f": {
+      "name": "Historical Classical SVM (30 features, Phase 3)",
+      "historical_baseline": true,
+      "pr_auc": 0.4138,
+      "roc_auc": 0.9651,
+      "inference_latency_ms_per_sample": 0.3366,
+      "total_inference_time_seconds": 19.1023,
+      "default_cutoff_evaluation": {
+        "threshold": 0.0,
+        "confusion_matrix": {
+          "true_negatives": 56382,
+          "false_positives": 269,
+          "false_negatives": 29,
+          "true_positives": 66
+        },
+        "precision": 0.197,
+        "recall": 0.6947,
+        "recall_fraction": "66/95",
+        "f1_score": 0.307,
+        "specificity": 0.9953,
+        "balanced_accuracy": 0.845,
+        "illustrative_scenario_losses": {
+          "5": 4140.0,
+          "20": 8490.0,
+          "50": 17190.0,
+          "100": 31690.0
+        },
+        "classification_report_str": "                precision    recall  f1-score   support\n\nLegitimate (0)     0.9995    0.9953    0.9974     56651\n     Fraud (1)     0.1970    0.6947    0.3070        95\n\n      accuracy                         0.9947     56746\n     macro avg     0.5983    0.8450    0.6522     56746\n  weighted avg     0.9981    0.9947    0.9962     56746\n"
+      },
+      "frozen_cost_optimal_evaluation": {},
+      "initial_baseline_cost_optimal_eval_audit": {}
+    },
+    "linear_svm_6f": {
+      "name": "Tuned Linear SVM (6 features, C=5.0)",
+      "historical_baseline": false,
+      "pr_auc": 0.6723,
+      "roc_auc": 0.9612,
+      "inference_latency_ms_per_sample": 0.0001,
+      "total_inference_time_seconds": 0.0033,
+      "default_cutoff_evaluation": {
+        "threshold": 0.0,
+        "confusion_matrix": {
+          "true_negatives": 56053,
+          "false_positives": 598,
+          "false_negatives": 14,
+          "true_positives": 81
+        },
+        "precision": 0.1193,
+        "recall": 0.8526,
+        "recall_fraction": "81/95",
+        "f1_score": 0.2093,
+        "specificity": 0.9894,
+        "balanced_accuracy": 0.921,
+        "illustrative_scenario_losses": {
+          "5": 6680.0,
+          "20": 8780.0,
+          "50": 12980.0,
+          "100": 19980.0
+        },
+        "classification_report_str": "                precision    recall  f1-score   support\n\nLegitimate (0)     0.9998    0.9894    0.9946     56651\n     Fraud (1)     0.1193    0.8526    0.2093        95\n\n      accuracy                         0.9892     56746\n     macro avg     0.5595    0.9210    0.6019     56746\n  weighted avg     0.9983    0.9892    0.9933     56746\n"
+      },
+      "frozen_cost_optimal_evaluation": {
+        "5": {
+          "cost_ratio_R": 5.0,
+          "frozen_threshold": 1.024647146669654,
+          "confusion_matrix": {
+            "true_negatives": 56629,
+            "false_positives": 22,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.7684,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7684,
+          "illustrative_scenario_loss": 1320.0
+        },
+        "20": {
+          "cost_ratio_R": 20.0,
+          "frozen_threshold": 1.024647146669654,
+          "confusion_matrix": {
+            "true_negatives": 56629,
+            "false_positives": 22,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.7684,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7684,
+          "illustrative_scenario_loss": 4620.0
+        },
+        "50": {
+          "cost_ratio_R": 50.0,
+          "frozen_threshold": 1.024647146669654,
+          "confusion_matrix": {
+            "true_negatives": 56629,
+            "false_positives": 22,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.7684,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7684,
+          "illustrative_scenario_loss": 11220.0
+        },
+        "100": {
+          "cost_ratio_R": 100.0,
+          "frozen_threshold": 1.024647146669654,
+          "confusion_matrix": {
+            "true_negatives": 56629,
+            "false_positives": 22,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.7684,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7684,
+          "illustrative_scenario_loss": 22220.0
+        }
+      },
+      "initial_baseline_cost_optimal_eval_audit": {
+        "5": {
+          "cost_ratio_R": 5.0,
+          "initial_baseline_threshold": 1.094219893382241,
+          "confusion_matrix": {
+            "true_negatives": 56631,
+            "false_positives": 20,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.7849,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7766,
+          "illustrative_scenario_loss": 1300.0
+        },
+        "20": {
+          "cost_ratio_R": 20.0,
+          "initial_baseline_threshold": 1.094219893382241,
+          "confusion_matrix": {
+            "true_negatives": 56631,
+            "false_positives": 20,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.7849,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7766,
+          "illustrative_scenario_loss": 4600.0
+        },
+        "50": {
+          "cost_ratio_R": 50.0,
+          "initial_baseline_threshold": 0.5305348668407905,
+          "confusion_matrix": {
+            "true_negatives": 56590,
+            "false_positives": 61,
+            "false_negatives": 20,
+            "true_positives": 75
+          },
+          "precision": 0.5515,
+          "recall": 0.7895,
+          "recall_fraction": "75/95",
+          "f1_score": 0.6494,
+          "illustrative_scenario_loss": 10610.0
+        },
+        "100": {
+          "cost_ratio_R": 100.0,
+          "initial_baseline_threshold": 0.5305348668407905,
+          "confusion_matrix": {
+            "true_negatives": 56590,
+            "false_positives": 61,
+            "false_negatives": 20,
+            "true_positives": 75
+          },
+          "precision": 0.5515,
+          "recall": 0.7895,
+          "recall_fraction": "75/95",
+          "f1_score": 0.6494,
+          "illustrative_scenario_loss": 20610.0
+        }
+      }
+    },
+    "rbf_svm_6f": {
+      "name": "Tuned RBF SVM (6 features, C=5.0, \u03b3=0.01)",
+      "historical_baseline": false,
+      "pr_auc": 0.6713,
+      "roc_auc": 0.9592,
+      "inference_latency_ms_per_sample": 0.0033,
+      "total_inference_time_seconds": 0.1855,
+      "default_cutoff_evaluation": {
+        "threshold": 0.0,
+        "confusion_matrix": {
+          "true_negatives": 56572,
+          "false_positives": 79,
+          "false_negatives": 20,
+          "true_positives": 75
+        },
+        "precision": 0.487,
+        "recall": 0.7895,
+        "recall_fraction": "75/95",
+        "f1_score": 0.6024,
+        "specificity": 0.9986,
+        "balanced_accuracy": 0.894,
+        "illustrative_scenario_losses": {
+          "5": 1790.0,
+          "20": 4790.0,
+          "50": 10790.0,
+          "100": 20790.0
+        },
+        "classification_report_str": "                precision    recall  f1-score   support\n\nLegitimate (0)     0.9996    0.9986    0.9991     56651\n     Fraud (1)     0.4870    0.7895    0.6024        95\n\n      accuracy                         0.9983     56746\n     macro avg     0.7433    0.8940    0.8008     56746\n  weighted avg     0.9988    0.9983    0.9985     56746\n"
+      },
+      "frozen_cost_optimal_evaluation": {
+        "5": {
+          "cost_ratio_R": 5.0,
+          "frozen_threshold": 0.46556977680855716,
+          "confusion_matrix": {
+            "true_negatives": 56633,
+            "false_positives": 18,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.8022,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7849,
+          "illustrative_scenario_loss": 1280.0
+        },
+        "20": {
+          "cost_ratio_R": 20.0,
+          "frozen_threshold": 0.46556977680855716,
+          "confusion_matrix": {
+            "true_negatives": 56633,
+            "false_positives": 18,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.8022,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7849,
+          "illustrative_scenario_loss": 4580.0
+        },
+        "50": {
+          "cost_ratio_R": 50.0,
+          "frozen_threshold": 0.46556977680855716,
+          "confusion_matrix": {
+            "true_negatives": 56633,
+            "false_positives": 18,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.8022,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7849,
+          "illustrative_scenario_loss": 11180.0
+        },
+        "100": {
+          "cost_ratio_R": 100.0,
+          "frozen_threshold": 0.46556977680855716,
+          "confusion_matrix": {
+            "true_negatives": 56633,
+            "false_positives": 18,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.8022,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.7849,
+          "illustrative_scenario_loss": 22180.0
+        }
+      },
+      "initial_baseline_cost_optimal_eval_audit": {
+        "5": {
+          "cost_ratio_R": 5.0,
+          "initial_baseline_threshold": 0.7292233022108354,
+          "confusion_matrix": {
+            "true_negatives": 56636,
+            "false_positives": 15,
+            "false_negatives": 24,
+            "true_positives": 71
+          },
+          "precision": 0.8256,
+          "recall": 0.7474,
+          "recall_fraction": "71/95",
+          "f1_score": 0.7845,
+          "illustrative_scenario_loss": 1350.0
+        },
+        "20": {
+          "cost_ratio_R": 20.0,
+          "initial_baseline_threshold": 0.7292233022108354,
+          "confusion_matrix": {
+            "true_negatives": 56636,
+            "false_positives": 15,
+            "false_negatives": 24,
+            "true_positives": 71
+          },
+          "precision": 0.8256,
+          "recall": 0.7474,
+          "recall_fraction": "71/95",
+          "f1_score": 0.7845,
+          "illustrative_scenario_loss": 4950.0
+        },
+        "50": {
+          "cost_ratio_R": 50.0,
+          "initial_baseline_threshold": 0.7292233022108354,
+          "confusion_matrix": {
+            "true_negatives": 56636,
+            "false_positives": 15,
+            "false_negatives": 24,
+            "true_positives": 71
+          },
+          "precision": 0.8256,
+          "recall": 0.7474,
+          "recall_fraction": "71/95",
+          "f1_score": 0.7845,
+          "illustrative_scenario_loss": 12150.0
+        },
+        "100": {
+          "cost_ratio_R": 100.0,
+          "initial_baseline_threshold": 0.7292233022108354,
+          "confusion_matrix": {
+            "true_negatives": 56636,
+            "false_positives": 15,
+            "false_negatives": 24,
+            "true_positives": 71
+          },
+          "precision": 0.8256,
+          "recall": 0.7474,
+          "recall_fraction": "71/95",
+          "f1_score": 0.7845,
+          "illustrative_scenario_loss": 24150.0
+        }
+      }
+    },
+    "qsvm_6f": {
+      "name": "Tuned QSVM (6 features, C=0.5, ZZ-Kernel)",
+      "historical_baseline": false,
+      "pr_auc": 0.4966,
+      "roc_auc": 0.96,
+      "inference_latency_ms_per_sample": 0.0018,
+      "total_inference_time_seconds": 0.1049,
+      "default_cutoff_evaluation": {
+        "threshold": 0.0,
+        "confusion_matrix": {
+          "true_negatives": 55024,
+          "false_positives": 1627,
+          "false_negatives": 15,
+          "true_positives": 80
+        },
+        "precision": 0.0469,
+        "recall": 0.8421,
+        "recall_fraction": "80/95",
+        "f1_score": 0.0888,
+        "specificity": 0.9713,
+        "balanced_accuracy": 0.9067,
+        "illustrative_scenario_losses": {
+          "5": 17020.0,
+          "20": 19270.0,
+          "50": 23770.0,
+          "100": 31270.0
+        },
+        "classification_report_str": "                precision    recall  f1-score   support\n\nLegitimate (0)     0.9997    0.9713    0.9853     56651\n     Fraud (1)     0.0469    0.8421    0.0888        95\n\n      accuracy                         0.9711     56746\n     macro avg     0.5233    0.9067    0.5370     56746\n  weighted avg     0.9981    0.9711    0.9838     56746\n"
+      },
+      "frozen_cost_optimal_evaluation": {
+        "5": {
+          "cost_ratio_R": 5.0,
+          "frozen_threshold": 0.8651196039043426,
+          "confusion_matrix": {
+            "true_negatives": 56611,
+            "false_positives": 40,
+            "false_negatives": 40,
+            "true_positives": 55
+          },
+          "precision": 0.5789,
+          "recall": 0.5789,
+          "recall_fraction": "55/95",
+          "f1_score": 0.5789,
+          "illustrative_scenario_loss": 2400.0
+        },
+        "20": {
+          "cost_ratio_R": 20.0,
+          "frozen_threshold": 0.718022101882898,
+          "confusion_matrix": {
+            "true_negatives": 56532,
+            "false_positives": 119,
+            "false_negatives": 27,
+            "true_positives": 68
+          },
+          "precision": 0.3636,
+          "recall": 0.7158,
+          "recall_fraction": "68/95",
+          "f1_score": 0.4823,
+          "illustrative_scenario_loss": 6590.0
+        },
+        "50": {
+          "cost_ratio_R": 50.0,
+          "frozen_threshold": 0.718022101882898,
+          "confusion_matrix": {
+            "true_negatives": 56532,
+            "false_positives": 119,
+            "false_negatives": 27,
+            "true_positives": 68
+          },
+          "precision": 0.3636,
+          "recall": 0.7158,
+          "recall_fraction": "68/95",
+          "f1_score": 0.4823,
+          "illustrative_scenario_loss": 14690.0
+        },
+        "100": {
+          "cost_ratio_R": 100.0,
+          "frozen_threshold": 0.718022101882898,
+          "confusion_matrix": {
+            "true_negatives": 56532,
+            "false_positives": 119,
+            "false_negatives": 27,
+            "true_positives": 68
+          },
+          "precision": 0.3636,
+          "recall": 0.7158,
+          "recall_fraction": "68/95",
+          "f1_score": 0.4823,
+          "illustrative_scenario_loss": 28190.0
+        }
+      },
+      "initial_baseline_cost_optimal_eval_audit": {
+        "5": {
+          "cost_ratio_R": 5.0,
+          "initial_baseline_threshold": 0.8178322895666394,
+          "confusion_matrix": {
+            "true_negatives": 56601,
+            "false_positives": 50,
+            "false_negatives": 34,
+            "true_positives": 61
+          },
+          "precision": 0.5495,
+          "recall": 0.6421,
+          "recall_fraction": "61/95",
+          "f1_score": 0.5922,
+          "illustrative_scenario_loss": 2200.0
+        },
+        "20": {
+          "cost_ratio_R": 20.0,
+          "initial_baseline_threshold": 0.6508975683647589,
+          "confusion_matrix": {
+            "true_negatives": 56457,
+            "false_positives": 194,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.2734,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.4033,
+          "illustrative_scenario_loss": 6340.0
+        },
+        "50": {
+          "cost_ratio_R": 50.0,
+          "initial_baseline_threshold": 0.6508975683647589,
+          "confusion_matrix": {
+            "true_negatives": 56457,
+            "false_positives": 194,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.2734,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.4033,
+          "illustrative_scenario_loss": 12940.0
+        },
+        "100": {
+          "cost_ratio_R": 100.0,
+          "initial_baseline_threshold": 0.6508975683647589,
+          "confusion_matrix": {
+            "true_negatives": 56457,
+            "false_positives": 194,
+            "false_negatives": 22,
+            "true_positives": 73
+          },
+          "precision": 0.2734,
+          "recall": 0.7684,
+          "recall_fraction": "73/95",
+          "f1_score": 0.4033,
+          "illustrative_scenario_loss": 23940.0
+        }
+      }
+    }
+  },
+  "timings": {
+    "manifest_seconds": 0.4136,
+    "data_prep_seconds": 0.2079,
+    "sv_train_seconds": 0.6782,
+    "pilot_benchmark_seconds": 0.1262,
+    "kernel_computation_seconds": 0.1251,
+    "evaluation_seconds": 19.9737,
+    "total_seconds": 21.525
+  }
+}

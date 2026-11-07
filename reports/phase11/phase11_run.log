@@ -1,0 +1,53 @@
+2026-10-13 20:53:00,005 [INFO] phase11_runner: ================================================================================
+2026-10-13 20:53:00,005 [INFO] phase11_runner: STARTING PHASE 11: FINAL SCIENTIFIC VALIDATION & CAPSTONE FINALIZATION
+2026-10-13 20:53:00,006 [INFO] phase11_runner: ================================================================================
+2026-10-13 20:53:00,006 [INFO] phase11_runner: Loading processed training and test datasets...
+2026-10-13 20:53:00,962 [INFO] phase11_runner: Training Split: 226980 samples (378 frauds, prevalence = 0.001665)
+2026-10-13 20:53:00,962 [INFO] phase11_runner: Holdout Test Split: 56746 samples (95 frauds, prevalence = 0.001674)
+2026-10-13 20:53:00,962 [INFO] phase11_runner: 
+--- STEP 1: Executing Leak-Free 5-Fold Stratified Cross-Validation ---
+2026-10-13 20:53:00,962 [INFO] phase11_runner: Initializing leak-free Stratified 5-Fold Cross-Validation...
+2026-10-13 20:53:00,976 [INFO] phase11_runner: --- Executing Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-13 20:53:50,399 [INFO] phase11_runner: Fold 1 completed in 49.43s (Val Fraud=75, Legit=45321)
+2026-10-13 20:53:50,411 [INFO] phase11_runner: --- Executing Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-13 20:54:43,079 [INFO] phase11_runner: Fold 2 completed in 52.67s (Val Fraud=75, Legit=45321)
+2026-10-13 20:54:43,086 [INFO] phase11_runner: --- Executing Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-13 20:55:33,631 [INFO] phase11_runner: Fold 3 completed in 50.55s (Val Fraud=76, Legit=45320)
+2026-10-13 20:55:33,637 [INFO] phase11_runner: --- Executing Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-13 20:56:24,390 [INFO] phase11_runner: Fold 4 completed in 50.75s (Val Fraud=76, Legit=45320)
+2026-10-13 20:56:24,396 [INFO] phase11_runner: --- Executing Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-13 20:57:17,249 [INFO] phase11_runner: Fold 5 completed in 52.85s (Val Fraud=76, Legit=45320)
+2026-10-13 20:57:17,399 [INFO] phase11_runner: Model [classical_linear_svm]: Mean CV PR-AUC = 0.6992 +/- 0.0187 | Aggregate OOF PR-AUC = 0.6885
+2026-10-13 20:57:17,490 [INFO] phase11_runner: Model [classical_rbf_svm]: Mean CV PR-AUC = 0.7362 +/- 0.0309 | Aggregate OOF PR-AUC = 0.7270
+2026-10-13 20:57:17,581 [INFO] phase11_runner: Model [opt_separable_qsvm]: Mean CV PR-AUC = 0.7188 +/- 0.0386 | Aggregate OOF PR-AUC = 0.7062
+2026-10-13 20:57:17,673 [INFO] phase11_runner: Model [anisotropic_separable_qsvm]: Mean CV PR-AUC = 0.7215 +/- 0.0337 | Aggregate OOF PR-AUC = 0.7117
+2026-10-13 20:57:17,763 [INFO] phase11_runner: Model [canonical_qsvm]: Mean CV PR-AUC = 0.4887 +/- 0.0627 | Aggregate OOF PR-AUC = 0.4574
+2026-10-13 20:57:17,850 [INFO] phase11_runner: Model [projected_quantum_kernel]: Mean CV PR-AUC = 0.6222 +/- 0.0814 | Aggregate OOF PR-AUC = 0.6150
+2026-10-13 20:57:18,612 [INFO] phase11_runner: Saved out-of-fold PR curves to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/figures/phase11/oof_natural_prevalence_pr_curves.png
+2026-10-13 20:57:18,612 [INFO] phase11_runner: 
+--- STEP 2: Out-of-Fold Paired Bootstrap Hypothesis Testing (B=2,000) ---
+2026-10-13 21:02:23,060 [INFO] phase11_runner: Bootstrap [Classical RBF SVM minus Opt Separable QSVM]: Delta PR-AUC = +0.0200 (95% CI: [+0.0024, +0.0381], Sig=True)
+2026-10-13 21:07:17,984 [INFO] phase11_runner: Bootstrap [Classical Linear SVM minus Opt Separable QSVM]: Delta PR-AUC = -0.0181 (95% CI: [-0.0426, +0.0047], Sig=False)
+2026-10-13 21:12:14,569 [INFO] phase11_runner: Bootstrap [Opt Separable QSVM minus Canonical QSVM]: Delta PR-AUC = +0.2475 (95% CI: [+0.1892, +0.3040], Sig=True)
+2026-10-13 21:17:10,882 [INFO] phase11_runner: Bootstrap [Anisotropic QSVM minus Opt Separable QSVM]: Delta PR-AUC = +0.0049 (95% CI: [-0.0099, +0.0210], Sig=False)
+2026-10-13 21:22:14,569 [INFO] phase11_runner: Bootstrap [Projected Quantum minus Opt Separable QSVM]: Delta PR-AUC = -0.0905 (95% CI: [-0.1352, -0.0456], Sig=True)
+2026-10-13 21:22:14,569 [INFO] phase11_runner: 
+--- STEP 3: Financial Threshold Calibration on Out-of-Fold Predictions ---
+2026-10-13 21:22:16,431 [INFO] phase11_runner: Model [classical_linear_svm]: Cost-Optimal Cutoffs: R=5 -> tau*=0.1867, R=20 -> tau*=0.1867, R=100 -> tau*=0.1787
+2026-10-13 21:22:18,282 [INFO] phase11_runner: Model [classical_rbf_svm]: Cost-Optimal Cutoffs: R=5 -> tau*=-0.2785, R=20 -> tau*=-0.2785, R=100 -> tau*=-0.2785
+2026-10-13 21:22:20,111 [INFO] phase11_runner: Model [opt_separable_qsvm]: Cost-Optimal Cutoffs: R=5 -> tau*=-0.3576, R=20 -> tau*=-0.3576, R=100 -> tau*=-0.3576
+2026-10-13 21:22:22,135 [INFO] phase11_runner: Model [anisotropic_separable_qsvm]: Cost-Optimal Cutoffs: R=5 -> tau*=-0.1987, R=20 -> tau*=-0.1987, R=100 -> tau*=-0.1987
+2026-10-13 21:22:24,027 [INFO] phase11_runner: Model [canonical_qsvm]: Cost-Optimal Cutoffs: R=5 -> tau*=0.1800, R=20 -> tau*=0.1800, R=100 -> tau*=0.1800
+2026-10-13 21:22:25,798 [INFO] phase11_runner: Model [projected_quantum_kernel]: Cost-Optimal Cutoffs: R=5 -> tau*=0.1674, R=20 -> tau*=0.1674, R=100 -> tau*=0.1674
+2026-10-13 21:22:26,065 [INFO] phase11_runner: Saved financial cost curves to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/figures/phase11/financial_cost_vs_threshold_curves.png
+2026-10-13 21:22:26,066 [INFO] phase11_runner: 
+--- STEP 4: Final Fair Evaluation on Holdout Test Set (56,746 samples) ---
+2026-10-13 21:22:26,260 [INFO] phase11_runner: Canonical Top 6 Features fitted on Training Partition: ['V17', 'V14', 'V12', 'V10', 'V16', 'V3']
+2026-10-13 21:23:37,626 [INFO] phase11_runner: Saved latency vs PR-AUC plot to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/figures/phase11/model_fair_latency_vs_prauc.png
+2026-10-13 21:23:37,626 [INFO] phase11_runner: 
+--- STEP 5: Serializing Phase 11 Artifacts ---
+2026-10-13 21:23:37,628 [INFO] phase11_runner: Saved validation metrics JSON to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase11/validation_metrics.json
+2026-10-13 21:23:37,638 [INFO] phase11_runner: Saved model comparison CSV to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase11/model_comparison.csv
+2026-10-13 21:23:37,638 [INFO] phase11_runner: ================================================================================
+2026-10-13 21:23:37,638 [INFO] phase11_runner: PHASE 11 EXECUTION COMPLETED SUCCESSFULLY IN 1837.67 SECONDS
+2026-10-13 21:23:37,638 [INFO] phase11_runner: ================================================================================

@@ -1,0 +1,922 @@
+{
+  "metadata": {
+    "phase": "Phase 11 \u2014 Final Scientific Validation & Capstone Finalization",
+    "date": "October 2026",
+    "runtime_seconds": 1837.67,
+    "n_train_total": 226980,
+    "n_train_fraud": 378,
+    "train_prevalence": 0.001665,
+    "n_test_total": 56746,
+    "n_test_fraud": 95,
+    "test_prevalence": 0.001674,
+    "random_state": 42,
+    "package_versions": {
+      "python": "3.10.0",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3"
+    }
+  },
+  "audit_cv_resampling_methodology": {
+    "phase9_design": {
+      "description": "Resampling to 20% fraud occurred before cross-validation on a 500-sample draw.",
+      "cv_prevalence": 0.2,
+      "resulting_cv_pr_auc": 0.9766,
+      "scientific_limitation": "CV validation folds had artificial 20% prevalence, inflating PR-AUC due to odds multiplier (1-pi)/pi = 4.0 vs natural 596.4."
+    },
+    "phase11_design": {
+      "description": "Stratified CV with inside-fold feature selection, resampling, and scaling. Validation folds retain exact natural prevalence.",
+      "cv_prevalence": 0.001665,
+      "resulting_cv_pr_auc": 0.7188,
+      "scientific_resolution": "Resolves the 0.9766 vs 0.65 divergence. Under natural prevalence, CV PR-AUC naturally aligns with holdout PR-AUC."
+    }
+  },
+  "leak_free_cv_summary": {
+    "classical_linear_svm": {
+      "fold_pr_auc_mean": 0.6992,
+      "fold_pr_auc_std": 0.0187,
+      "fold_roc_auc_mean": 0.9642,
+      "fold_roc_auc_std": 0.0171,
+      "aggregate_oof_pr_auc": 0.6885,
+      "aggregate_oof_roc_auc": 0.962,
+      "aggregate_oof_precision_default": 0.0858,
+      "aggregate_oof_recall_default": 0.8704,
+      "aggregate_oof_f1_default": 0.1562,
+      "aggregate_oof_false_positives": 3505,
+      "aggregate_oof_false_negatives": 49
+    },
+    "classical_rbf_svm": {
+      "fold_pr_auc_mean": 0.7362,
+      "fold_pr_auc_std": 0.0309,
+      "fold_roc_auc_mean": 0.9659,
+      "fold_roc_auc_std": 0.0158,
+      "aggregate_oof_pr_auc": 0.727,
+      "aggregate_oof_roc_auc": 0.9651,
+      "aggregate_oof_precision_default": 0.4544,
+      "aggregate_oof_recall_default": 0.8439,
+      "aggregate_oof_f1_default": 0.5907,
+      "aggregate_oof_false_positives": 383,
+      "aggregate_oof_false_negatives": 59
+    },
+    "opt_separable_qsvm": {
+      "fold_pr_auc_mean": 0.7188,
+      "fold_pr_auc_std": 0.0386,
+      "fold_roc_auc_mean": 0.9665,
+      "fold_roc_auc_std": 0.0149,
+      "aggregate_oof_pr_auc": 0.7062,
+      "aggregate_oof_roc_auc": 0.9656,
+      "aggregate_oof_precision_default": 0.5311,
+      "aggregate_oof_recall_default": 0.836,
+      "aggregate_oof_f1_default": 0.6495,
+      "aggregate_oof_false_positives": 279,
+      "aggregate_oof_false_negatives": 62
+    },
+    "anisotropic_separable_qsvm": {
+      "fold_pr_auc_mean": 0.7215,
+      "fold_pr_auc_std": 0.0337,
+      "fold_roc_auc_mean": 0.9667,
+      "fold_roc_auc_std": 0.0148,
+      "aggregate_oof_pr_auc": 0.7117,
+      "aggregate_oof_roc_auc": 0.9657,
+      "aggregate_oof_precision_default": 0.2745,
+      "aggregate_oof_recall_default": 0.8519,
+      "aggregate_oof_f1_default": 0.4152,
+      "aggregate_oof_false_positives": 851,
+      "aggregate_oof_false_negatives": 56
+    },
+    "canonical_qsvm": {
+      "fold_pr_auc_mean": 0.4887,
+      "fold_pr_auc_std": 0.0627,
+      "fold_roc_auc_mean": 0.9634,
+      "fold_roc_auc_std": 0.0125,
+      "aggregate_oof_pr_auc": 0.4574,
+      "aggregate_oof_roc_auc": 0.96,
+      "aggregate_oof_precision_default": 0.0976,
+      "aggregate_oof_recall_default": 0.8651,
+      "aggregate_oof_f1_default": 0.1753,
+      "aggregate_oof_false_positives": 3025,
+      "aggregate_oof_false_negatives": 51
+    },
+    "projected_quantum_kernel": {
+      "fold_pr_auc_mean": 0.6222,
+      "fold_pr_auc_std": 0.0814,
+      "fold_roc_auc_mean": 0.9659,
+      "fold_roc_auc_std": 0.0141,
+      "aggregate_oof_pr_auc": 0.615,
+      "aggregate_oof_roc_auc": 0.9646,
+      "aggregate_oof_precision_default": 0.0983,
+      "aggregate_oof_recall_default": 0.8545,
+      "aggregate_oof_f1_default": 0.1764,
+      "aggregate_oof_false_positives": 2962,
+      "aggregate_oof_false_negatives": 55
+    }
+  },
+  "fold_details": [
+    {
+      "fold_index": 0,
+      "train_samples": 181584,
+      "val_samples": 45396,
+      "val_fraud_count": 75,
+      "val_legit_count": 45321,
+      "val_prevalence": 0.001652,
+      "selected_features": [
+        "V17",
+        "V14",
+        "V12",
+        "V10",
+        "V16",
+        "V3"
+      ],
+      "fold_runtime_seconds": 49.43
+    },
+    {
+      "fold_index": 1,
+      "train_samples": 181584,
+      "val_samples": 45396,
+      "val_fraud_count": 75,
+      "val_legit_count": 45321,
+      "val_prevalence": 0.001652,
+      "selected_features": [
+        "V17",
+        "V14",
+        "V12",
+        "V10",
+        "V16",
+        "V3"
+      ],
+      "fold_runtime_seconds": 52.67
+    },
+    {
+      "fold_index": 2,
+      "train_samples": 181584,
+      "val_samples": 45396,
+      "val_fraud_count": 76,
+      "val_legit_count": 45320,
+      "val_prevalence": 0.001674,
+      "selected_features": [
+        "V17",
+        "V14",
+        "V12",
+        "V10",
+        "V16",
+        "V3"
+      ],
+      "fold_runtime_seconds": 50.55
+    },
+    {
+      "fold_index": 3,
+      "train_samples": 181584,
+      "val_samples": 45396,
+      "val_fraud_count": 76,
+      "val_legit_count": 45320,
+      "val_prevalence": 0.001674,
+      "selected_features": [
+        "V17",
+        "V14",
+        "V12",
+        "V10",
+        "V16",
+        "V3"
+      ],
+      "fold_runtime_seconds": 50.75
+    },
+    {
+      "fold_index": 4,
+      "train_samples": 181584,
+      "val_samples": 45396,
+      "val_fraud_count": 76,
+      "val_legit_count": 45320,
+      "val_prevalence": 0.001674,
+      "selected_features": [
+        "V17",
+        "V14",
+        "V12",
+        "V10",
+        "V3",
+        "V16"
+      ],
+      "fold_runtime_seconds": 52.85
+    }
+  ],
+  "out_of_fold_paired_bootstrap": {
+    "classical_rbf_svm_minus_opt_separable_qsvm": {
+      "comparison": "Classical RBF SVM minus Opt Separable QSVM",
+      "subtraction_direction": "Delta = Metric(Classical RBF SVM) - Metric(Opt Separable QSVM)",
+      "delta_pr_auc": {
+        "mean": 0.02,
+        "std": 0.0092,
+        "ci_95": [
+          0.0024,
+          0.0381
+        ],
+        "statistically_significant": true
+      },
+      "delta_roc_auc": {
+        "mean": -0.0005,
+        "std": 0.0006,
+        "ci_95": [
+          -0.0017,
+          0.0006
+        ],
+        "statistically_significant": false
+      },
+      "delta_precision": {
+        "mean": -0.0765,
+        "std": 0.008,
+        "ci_95": [
+          -0.0924,
+          -0.0614
+        ],
+        "statistically_significant": true
+      },
+      "delta_recall": {
+        "mean": 0.0081,
+        "std": 0.0045,
+        "ci_95": [
+          0.0,
+          0.0179
+        ],
+        "statistically_significant": false
+      }
+    },
+    "classical_linear_svm_minus_opt_separable_qsvm": {
+      "comparison": "Classical Linear SVM minus Opt Separable QSVM",
+      "subtraction_direction": "Delta = Metric(Classical Linear SVM) - Metric(Opt Separable QSVM)",
+      "delta_pr_auc": {
+        "mean": -0.0181,
+        "std": 0.0122,
+        "ci_95": [
+          -0.0426,
+          0.0047
+        ],
+        "statistically_significant": false
+      },
+      "delta_roc_auc": {
+        "mean": -0.0036,
+        "std": 0.003,
+        "ci_95": [
+          -0.0099,
+          0.0017
+        ],
+        "statistically_significant": false
+      },
+      "delta_precision": {
+        "mean": -0.4452,
+        "std": 0.018,
+        "ci_95": [
+          -0.481,
+          -0.4101
+        ],
+        "statistically_significant": true
+      },
+      "delta_recall": {
+        "mean": 0.0344,
+        "std": 0.0102,
+        "ci_95": [
+          0.0158,
+          0.0557
+        ],
+        "statistically_significant": true
+      }
+    },
+    "opt_separable_qsvm_minus_canonical_qsvm": {
+      "comparison": "Opt Separable QSVM minus Canonical QSVM",
+      "subtraction_direction": "Delta = Metric(Opt Separable QSVM) - Metric(Canonical QSVM)",
+      "delta_pr_auc": {
+        "mean": 0.2475,
+        "std": 0.0291,
+        "ci_95": [
+          0.1892,
+          0.304
+        ],
+        "statistically_significant": true
+      },
+      "delta_roc_auc": {
+        "mean": 0.0057,
+        "std": 0.0043,
+        "ci_95": [
+          -0.0024,
+          0.0145
+        ],
+        "statistically_significant": false
+      },
+      "delta_precision": {
+        "mean": 0.4335,
+        "std": 0.0176,
+        "ci_95": [
+          0.4,
+          0.4687
+        ],
+        "statistically_significant": true
+      },
+      "delta_recall": {
+        "mean": -0.0291,
+        "std": 0.0087,
+        "ci_95": [
+          -0.0475,
+          -0.0132
+        ],
+        "statistically_significant": true
+      }
+    },
+    "anisotropic_separable_qsvm_minus_opt_separable_qsvm": {
+      "comparison": "Anisotropic QSVM minus Opt Separable QSVM",
+      "subtraction_direction": "Delta = Metric(Anisotropic QSVM) - Metric(Opt Separable QSVM)",
+      "delta_pr_auc": {
+        "mean": 0.0049,
+        "std": 0.0081,
+        "ci_95": [
+          -0.0099,
+          0.021
+        ],
+        "statistically_significant": false
+      },
+      "delta_roc_auc": {
+        "mean": 0.0001,
+        "std": 0.0023,
+        "ci_95": [
+          -0.0044,
+          0.0043
+        ],
+        "statistically_significant": false
+      },
+      "delta_precision": {
+        "mean": -0.2567,
+        "std": 0.0132,
+        "ci_95": [
+          -0.2834,
+          -0.2319
+        ],
+        "statistically_significant": true
+      },
+      "delta_recall": {
+        "mean": 0.016,
+        "std": 0.0073,
+        "ci_95": [
+          0.0026,
+          0.0319
+        ],
+        "statistically_significant": true
+      }
+    },
+    "projected_quantum_kernel_minus_opt_separable_qsvm": {
+      "comparison": "Projected Quantum minus Opt Separable QSVM",
+      "subtraction_direction": "Delta = Metric(Projected Quantum) - Metric(Opt Separable QSVM)",
+      "delta_pr_auc": {
+        "mean": -0.0905,
+        "std": 0.0226,
+        "ci_95": [
+          -0.1352,
+          -0.0456
+        ],
+        "statistically_significant": true
+      },
+      "delta_roc_auc": {
+        "mean": -0.0009,
+        "std": 0.0018,
+        "ci_95": [
+          -0.0044,
+          0.0028
+        ],
+        "statistically_significant": false
+      },
+      "delta_precision": {
+        "mean": -0.4327,
+        "std": 0.0176,
+        "ci_95": [
+          -0.4675,
+          -0.3988
+        ],
+        "statistically_significant": true
+      },
+      "delta_recall": {
+        "mean": 0.0186,
+        "std": 0.0096,
+        "ci_95": [
+          0.0,
+          0.0377
+        ],
+        "statistically_significant": false
+      }
+    }
+  },
+  "out_of_fold_cost_calibration": {
+    "classical_linear_svm": {
+      "5": {
+        "cost_ratio_R": 5.0,
+        "c_fp": 10.0,
+        "c_fn": 50.0,
+        "optimal_threshold": 0.1867,
+        "financial_cost": 22170.0,
+        "precision": 0.1427,
+        "recall": 0.8571,
+        "false_positives": 1947,
+        "false_negatives": 54,
+        "true_positives": 324,
+        "true_negatives": 224655
+      },
+      "20": {
+        "cost_ratio_R": 20.0,
+        "c_fp": 10.0,
+        "c_fn": 200.0,
+        "optimal_threshold": 0.1867,
+        "financial_cost": 30270.0,
+        "precision": 0.1427,
+        "recall": 0.8571,
+        "false_positives": 1947,
+        "false_negatives": 54,
+        "true_positives": 324,
+        "true_negatives": 224655
+      },
+      "50": {
+        "cost_ratio_R": 50.0,
+        "c_fp": 10.0,
+        "c_fn": 500.0,
+        "optimal_threshold": 0.1867,
+        "financial_cost": 46470.0,
+        "precision": 0.1427,
+        "recall": 0.8571,
+        "false_positives": 1947,
+        "false_negatives": 54,
+        "true_positives": 324,
+        "true_negatives": 224655
+      },
+      "100": {
+        "cost_ratio_R": 100.0,
+        "c_fp": 10.0,
+        "c_fn": 1000.0,
+        "optimal_threshold": 0.1787,
+        "financial_cost": 72980.0,
+        "precision": 0.1399,
+        "recall": 0.8598,
+        "false_positives": 1998,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224604
+      }
+    },
+    "classical_rbf_svm": {
+      "5": {
+        "cost_ratio_R": 5.0,
+        "c_fp": 10.0,
+        "c_fn": 50.0,
+        "optimal_threshold": -0.2785,
+        "financial_cost": 22100.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      },
+      "20": {
+        "cost_ratio_R": 20.0,
+        "c_fp": 10.0,
+        "c_fn": 200.0,
+        "optimal_threshold": -0.2785,
+        "financial_cost": 30050.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      },
+      "50": {
+        "cost_ratio_R": 50.0,
+        "c_fp": 10.0,
+        "c_fn": 500.0,
+        "optimal_threshold": -0.2785,
+        "financial_cost": 45950.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      },
+      "100": {
+        "cost_ratio_R": 100.0,
+        "c_fp": 10.0,
+        "c_fn": 1000.0,
+        "optimal_threshold": -0.2785,
+        "financial_cost": 72450.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      }
+    },
+    "opt_separable_qsvm": {
+      "5": {
+        "cost_ratio_R": 5.0,
+        "c_fp": 10.0,
+        "c_fn": 50.0,
+        "optimal_threshold": -0.3576,
+        "financial_cost": 22100.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      },
+      "20": {
+        "cost_ratio_R": 20.0,
+        "c_fp": 10.0,
+        "c_fn": 200.0,
+        "optimal_threshold": -0.3576,
+        "financial_cost": 30050.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      },
+      "50": {
+        "cost_ratio_R": 50.0,
+        "c_fp": 10.0,
+        "c_fn": 500.0,
+        "optimal_threshold": -0.3576,
+        "financial_cost": 45950.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      },
+      "100": {
+        "cost_ratio_R": 100.0,
+        "c_fp": 10.0,
+        "c_fn": 1000.0,
+        "optimal_threshold": -0.3576,
+        "financial_cost": 72450.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      }
+    },
+    "anisotropic_separable_qsvm": {
+      "5": {
+        "cost_ratio_R": 5.0,
+        "c_fp": 10.0,
+        "c_fn": 50.0,
+        "optimal_threshold": -0.1987,
+        "financial_cost": 22100.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      },
+      "20": {
+        "cost_ratio_R": 20.0,
+        "c_fp": 10.0,
+        "c_fn": 200.0,
+        "optimal_threshold": -0.1987,
+        "financial_cost": 30050.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      },
+      "50": {
+        "cost_ratio_R": 50.0,
+        "c_fp": 10.0,
+        "c_fn": 500.0,
+        "optimal_threshold": -0.1987,
+        "financial_cost": 45950.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      },
+      "100": {
+        "cost_ratio_R": 100.0,
+        "c_fp": 10.0,
+        "c_fn": 1000.0,
+        "optimal_threshold": -0.1987,
+        "financial_cost": 72450.0,
+        "precision": 0.1432,
+        "recall": 0.8598,
+        "false_positives": 1945,
+        "false_negatives": 53,
+        "true_positives": 325,
+        "true_negatives": 224657
+      }
+    },
+    "canonical_qsvm": {
+      "5": {
+        "cost_ratio_R": 5.0,
+        "c_fp": 10.0,
+        "c_fn": 50.0,
+        "optimal_threshold": 0.18,
+        "financial_cost": 21980.0,
+        "precision": 0.1441,
+        "recall": 0.8651,
+        "false_positives": 1943,
+        "false_negatives": 51,
+        "true_positives": 327,
+        "true_negatives": 224659
+      },
+      "20": {
+        "cost_ratio_R": 20.0,
+        "c_fp": 10.0,
+        "c_fn": 200.0,
+        "optimal_threshold": 0.18,
+        "financial_cost": 29630.0,
+        "precision": 0.1441,
+        "recall": 0.8651,
+        "false_positives": 1943,
+        "false_negatives": 51,
+        "true_positives": 327,
+        "true_negatives": 224659
+      },
+      "50": {
+        "cost_ratio_R": 50.0,
+        "c_fp": 10.0,
+        "c_fn": 500.0,
+        "optimal_threshold": 0.18,
+        "financial_cost": 44930.0,
+        "precision": 0.1441,
+        "recall": 0.8651,
+        "false_positives": 1943,
+        "false_negatives": 51,
+        "true_positives": 327,
+        "true_negatives": 224659
+      },
+      "100": {
+        "cost_ratio_R": 100.0,
+        "c_fp": 10.0,
+        "c_fn": 1000.0,
+        "optimal_threshold": 0.18,
+        "financial_cost": 70430.0,
+        "precision": 0.1441,
+        "recall": 0.8651,
+        "false_positives": 1943,
+        "false_negatives": 51,
+        "true_positives": 327,
+        "true_negatives": 224659
+      }
+    },
+    "projected_quantum_kernel": {
+      "5": {
+        "cost_ratio_R": 5.0,
+        "c_fp": 10.0,
+        "c_fn": 50.0,
+        "optimal_threshold": 0.1674,
+        "financial_cost": 22400.0,
+        "precision": 0.141,
+        "recall": 0.8466,
+        "false_positives": 1950,
+        "false_negatives": 58,
+        "true_positives": 320,
+        "true_negatives": 224652
+      },
+      "20": {
+        "cost_ratio_R": 20.0,
+        "c_fp": 10.0,
+        "c_fn": 200.0,
+        "optimal_threshold": 0.1674,
+        "financial_cost": 31100.0,
+        "precision": 0.141,
+        "recall": 0.8466,
+        "false_positives": 1950,
+        "false_negatives": 58,
+        "true_positives": 320,
+        "true_negatives": 224652
+      },
+      "50": {
+        "cost_ratio_R": 50.0,
+        "c_fp": 10.0,
+        "c_fn": 500.0,
+        "optimal_threshold": 0.1674,
+        "financial_cost": 48500.0,
+        "precision": 0.141,
+        "recall": 0.8466,
+        "false_positives": 1950,
+        "false_negatives": 58,
+        "true_positives": 320,
+        "true_negatives": 224652
+      },
+      "100": {
+        "cost_ratio_R": 100.0,
+        "c_fp": 10.0,
+        "c_fn": 1000.0,
+        "optimal_threshold": 0.1674,
+        "financial_cost": 77500.0,
+        "precision": 0.141,
+        "recall": 0.8466,
+        "false_positives": 1950,
+        "false_negatives": 58,
+        "true_positives": 320,
+        "true_negatives": 224652
+      }
+    }
+  },
+  "holdout_test_set_fair_benchmark": {
+    "classical_linear_svm": {
+      "model_name": "Classical Linear SVM (6 features)",
+      "pr_auc": 0.6434,
+      "roc_auc": 0.9285,
+      "default_cutoff_tau_0": {
+        "pr_auc": 0.6434,
+        "roc_auc": 0.9285,
+        "threshold": 0.0,
+        "precision": 0.1095,
+        "recall": 0.8,
+        "f1_score": 0.1926,
+        "true_positives": 76,
+        "false_positives": 618,
+        "true_negatives": 56033,
+        "false_negatives": 19,
+        "prevalence": 0.001674
+      },
+      "calibrated_cutoff_r20": {
+        "pr_auc": 0.6434,
+        "roc_auc": 0.9285,
+        "threshold": 0.1867,
+        "precision": 0.2153,
+        "recall": 0.8,
+        "f1_score": 0.3393,
+        "true_positives": 76,
+        "false_positives": 277,
+        "true_negatives": 56374,
+        "false_negatives": 19,
+        "prevalence": 0.001674
+      },
+      "latency_ms_per_sample": 0.00013
+    },
+    "classical_rbf_svm": {
+      "model_name": "Classical RBF SVM (C=5, \u03b3=0.01)",
+      "pr_auc": 0.6577,
+      "roc_auc": 0.9284,
+      "default_cutoff_tau_0": {
+        "pr_auc": 0.6577,
+        "roc_auc": 0.9284,
+        "threshold": 0.0,
+        "precision": 0.6887,
+        "recall": 0.7684,
+        "f1_score": 0.7264,
+        "true_positives": 73,
+        "false_positives": 33,
+        "true_negatives": 56618,
+        "false_negatives": 22,
+        "prevalence": 0.001674
+      },
+      "calibrated_cutoff_r20": {
+        "pr_auc": 0.6577,
+        "roc_auc": 0.9284,
+        "threshold": -0.2785,
+        "precision": 0.4335,
+        "recall": 0.7895,
+        "f1_score": 0.5597,
+        "true_positives": 75,
+        "false_positives": 98,
+        "true_negatives": 56553,
+        "false_negatives": 20,
+        "prevalence": 0.001674
+      },
+      "latency_ms_per_sample": 0.00371
+    },
+    "canonical_qsvm": {
+      "model_name": "Canonical QSVM (ZZ-FeatureMap, reps=1)",
+      "pr_auc": 0.5568,
+      "roc_auc": 0.938,
+      "default_cutoff_tau_0": {
+        "pr_auc": 0.5568,
+        "roc_auc": 0.938,
+        "threshold": 0.0,
+        "precision": 0.0949,
+        "recall": 0.8,
+        "f1_score": 0.1696,
+        "true_positives": 76,
+        "false_positives": 725,
+        "true_negatives": 55926,
+        "false_negatives": 19,
+        "prevalence": 0.001674
+      },
+      "calibrated_cutoff_r20": {
+        "pr_auc": 0.5568,
+        "roc_auc": 0.938,
+        "threshold": 0.18,
+        "precision": 0.121,
+        "recall": 0.8,
+        "f1_score": 0.2102,
+        "true_positives": 76,
+        "false_positives": 552,
+        "true_negatives": 56099,
+        "false_negatives": 19,
+        "prevalence": 0.001674
+      },
+      "latency_ms_per_sample": 0.82868
+    },
+    "opt_separable_qsvm": {
+      "model_name": "Optimized Separable QSVM (\u03b2=0.50)",
+      "pr_auc": 0.6098,
+      "roc_auc": 0.9276,
+      "default_cutoff_tau_0": {
+        "pr_auc": 0.6098,
+        "roc_auc": 0.9276,
+        "threshold": 0.0,
+        "precision": 0.7374,
+        "recall": 0.7684,
+        "f1_score": 0.7526,
+        "true_positives": 73,
+        "false_positives": 26,
+        "true_negatives": 56625,
+        "false_negatives": 22,
+        "prevalence": 0.001674
+      },
+      "calibrated_cutoff_r20": {
+        "pr_auc": 0.6098,
+        "roc_auc": 0.9276,
+        "threshold": -0.3576,
+        "precision": 0.463,
+        "recall": 0.7895,
+        "f1_score": 0.5837,
+        "true_positives": 75,
+        "false_positives": 87,
+        "true_negatives": 56564,
+        "false_negatives": 20,
+        "prevalence": 0.001674
+      },
+      "latency_ms_per_sample": 0.07147
+    },
+    "anisotropic_separable_qsvm": {
+      "model_name": "Anisotropic Separable QSVM (Feature Weighted)",
+      "pr_auc": 0.6414,
+      "roc_auc": 0.9257,
+      "default_cutoff_tau_0": {
+        "pr_auc": 0.6414,
+        "roc_auc": 0.9257,
+        "threshold": 0.0,
+        "precision": 0.4688,
+        "recall": 0.7895,
+        "f1_score": 0.5882,
+        "true_positives": 75,
+        "false_positives": 85,
+        "true_negatives": 56566,
+        "false_negatives": 20,
+        "prevalence": 0.001674
+      },
+      "calibrated_cutoff_r20": {
+        "pr_auc": 0.6414,
+        "roc_auc": 0.9257,
+        "threshold": -0.1987,
+        "precision": 0.2444,
+        "recall": 0.8,
+        "f1_score": 0.3744,
+        "true_positives": 76,
+        "false_positives": 235,
+        "true_negatives": 56416,
+        "false_negatives": 19,
+        "prevalence": 0.001674
+      },
+      "latency_ms_per_sample": 0.04485
+    },
+    "projected_quantum_kernel": {
+      "model_name": "Projected Quantum Kernel (PQK, \u03b3=0.10)",
+      "pr_auc": 0.6146,
+      "roc_auc": 0.9289,
+      "default_cutoff_tau_0": {
+        "pr_auc": 0.6146,
+        "roc_auc": 0.9289,
+        "threshold": 0.0,
+        "precision": 0.18,
+        "recall": 0.7789,
+        "f1_score": 0.2925,
+        "true_positives": 74,
+        "false_positives": 337,
+        "true_negatives": 56314,
+        "false_negatives": 21,
+        "prevalence": 0.001674
+      },
+      "calibrated_cutoff_r20": {
+        "pr_auc": 0.6146,
+        "roc_auc": 0.9289,
+        "threshold": 0.1674,
+        "precision": 0.2526,
+        "recall": 0.7684,
+        "f1_score": 0.3802,
+        "true_positives": 73,
+        "false_positives": 216,
+        "true_negatives": 56435,
+        "false_negatives": 22,
+        "prevalence": 0.001674
+      },
+      "latency_ms_per_sample": 0.27719
+    }
+  }
+}

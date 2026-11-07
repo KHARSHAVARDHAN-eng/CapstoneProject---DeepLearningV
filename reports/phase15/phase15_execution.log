@@ -1,0 +1,153 @@
+2026-10-14 11:24:10,113 [INFO] phase15_runner: ==================================================================
+2026-10-14 11:24:10,114 [INFO] phase15_runner: Starting Phase 15: Trainable Quantum Kernel Optimization Runner
+2026-10-14 11:24:10,114 [INFO] phase15_runner: Mode: PILOT
+2026-10-14 11:24:10,114 [INFO] phase15_runner: Sample sizes: [2000] | Seeds: [42] | Chunk size: 5000
+2026-10-14 11:24:10,114 [INFO] phase15_runner: ==================================================================
+2026-10-14 11:24:10,114 [INFO] phase15_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 11:24:11,047 [INFO] phase15_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.93s
+2026-10-14 11:24:11,047 [INFO] phase15_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 11:24:11,047 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:24:11,047 [INFO] phase15_trainable_kernels: STARTING PHASE 15 TRAINABLE KERNEL RUNNER (Pilot=True)
+2026-10-14 11:24:11,047 [INFO] phase15_trainable_kernels: Sample sizes: [2000] | Seeds: [42] | Dimension K=16 | Total: 226980
+2026-10-14 11:24:11,047 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:24:11,047 [INFO] phase15_trainable_kernels: >>> Starting Seed 1/1 (Seed=42) <<<
+2026-10-14 11:24:11,066 [INFO] phase15_trainable_kernels: --- Seed 42 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 11:24:46,339 [INFO] phase15_trainable_kernels: Fold 1 N=2000 QSVM KTA optimized in 11.58s (CKTA=0.5785, theta=[0.0287, 0.0342])
+2026-10-14 11:25:24,034 [INFO] phase15_trainable_kernels: Fold 1 N=2000 RBF KTA optimized in 22.41s (CKTA=0.6222, gamma=[0.000050, 0.002061])
+2026-10-14 11:25:56,464 [INFO] phase15_trainable_kernels: Fold 1 completed in 105.40s
+2026-10-14 11:25:57,042 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:25:57,042 [INFO] phase15_trainable_kernels: PHASE 15 BENCHMARK COMPLETE in 105.99s (1.77 min). Peak Memory: 3889.23 MB
+2026-10-14 11:25:57,042 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:25:57,090 [INFO] phase15_runner: Saved pilot metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase15/pilot_metrics.json
+2026-10-14 11:39:12,267 [INFO] phase15_runner: ==================================================================
+2026-10-14 11:39:12,267 [INFO] phase15_runner: Starting Phase 15: Trainable Quantum Kernel Optimization Runner
+2026-10-14 11:39:12,268 [INFO] phase15_runner: Mode: PILOT
+2026-10-14 11:39:12,268 [INFO] phase15_runner: Sample sizes: [2000] | Seeds: [42] | Chunk size: 2500
+2026-10-14 11:39:12,268 [INFO] phase15_runner: ==================================================================
+2026-10-14 11:39:12,268 [INFO] phase15_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 11:39:13,034 [INFO] phase15_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.77s
+2026-10-14 11:39:13,034 [INFO] phase15_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 11:39:13,034 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:39:13,034 [INFO] phase15_trainable_kernels: STARTING PHASE 15 TRAINABLE KERNEL RUNNER (Pilot=True)
+2026-10-14 11:39:13,035 [INFO] phase15_trainable_kernels: Sample sizes: [2000] | Seeds: [42] | Dimension K=16 | Total: 226980
+2026-10-14 11:39:13,035 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:39:13,035 [INFO] phase15_trainable_kernels: >>> Starting Seed 1/1 (Seed=42) <<<
+2026-10-14 11:39:13,050 [INFO] phase15_trainable_kernels: --- Seed 42 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 11:39:40,258 [INFO] phase15_trainable_kernels: Fold 1 N=2000 QSVM KTA optimized in 9.94s (CKTA=0.5785, theta=[0.0287, 0.0342])
+2026-10-14 11:40:06,801 [INFO] phase15_trainable_kernels: Fold 1 N=2000 RBF KTA optimized in 15.63s (CKTA=0.6222, gamma=[0.000050, 0.002061])
+2026-10-14 11:40:34,328 [INFO] phase15_trainable_kernels: Fold 1 completed in 81.28s
+2026-10-14 11:40:34,554 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:40:34,554 [INFO] phase15_trainable_kernels: PHASE 15 BENCHMARK COMPLETE in 81.52s (1.36 min). Peak Memory: 2538.87 MB
+2026-10-14 11:40:34,554 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:40:34,603 [INFO] phase15_runner: Saved pilot metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase15/pilot_metrics.json
+2026-10-14 11:45:02,484 [INFO] phase15_runner: ==================================================================
+2026-10-14 11:45:02,484 [INFO] phase15_runner: Starting Phase 15: Trainable Quantum Kernel Optimization Runner
+2026-10-14 11:45:02,484 [INFO] phase15_runner: Mode: FULL
+2026-10-14 11:45:02,484 [INFO] phase15_runner: Sample sizes: [2000, 3000] | Seeds: [42, 101, 2024] | Chunk size: 2500
+2026-10-14 11:45:02,484 [INFO] phase15_runner: ==================================================================
+2026-10-14 11:45:02,484 [INFO] phase15_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 11:45:03,310 [INFO] phase15_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.83s
+2026-10-14 11:45:03,310 [INFO] phase15_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 11:45:03,311 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:45:03,311 [INFO] phase15_trainable_kernels: STARTING PHASE 15 TRAINABLE KERNEL RUNNER (Pilot=False)
+2026-10-14 11:45:03,311 [INFO] phase15_trainable_kernels: Sample sizes: [2000, 3000] | Seeds: [42, 101, 2024] | Dimension K=16 | Total: 226980
+2026-10-14 11:45:03,311 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 11:45:03,311 [INFO] phase15_trainable_kernels: >>> Starting Seed 1/3 (Seed=42) <<<
+2026-10-14 11:45:03,365 [INFO] phase15_trainable_kernels: --- Seed 42 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 11:45:29,550 [INFO] phase15_trainable_kernels: Fold 1 N=2000 QSVM KTA optimized in 9.92s (CKTA=0.5785, theta=[0.0287, 0.0342])
+2026-10-14 11:45:56,657 [INFO] phase15_trainable_kernels: Fold 1 N=2000 RBF KTA optimized in 15.56s (CKTA=0.6222, gamma=[0.000050, 0.002061])
+2026-10-14 11:46:37,087 [INFO] phase15_trainable_kernels: Fold 1 N=3000 QSVM KTA optimized in 11.23s (CKTA=0.6193, theta=[0.0281, 0.0361])
+2026-10-14 11:47:12,417 [INFO] phase15_trainable_kernels: Fold 1 N=3000 RBF KTA optimized in 16.14s (CKTA=0.6900, gamma=[0.000050, 0.002346])
+2026-10-14 11:47:43,370 [INFO] phase15_trainable_kernels: Fold 1 completed in 160.00s
+2026-10-14 11:47:43,377 [INFO] phase15_trainable_kernels: --- Seed 42 | Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-14 11:48:07,952 [INFO] phase15_trainable_kernels: Fold 2 N=2000 QSVM KTA optimized in 9.96s (CKTA=0.6267, theta=[0.0288, 0.0355])
+2026-10-14 11:48:34,383 [INFO] phase15_trainable_kernels: Fold 2 N=2000 RBF KTA optimized in 15.73s (CKTA=0.7010, gamma=[0.000050, 0.002251])
+2026-10-14 11:49:15,300 [INFO] phase15_trainable_kernels: Fold 2 N=3000 QSVM KTA optimized in 11.40s (CKTA=0.5858, theta=[0.0282, 0.0356])
+2026-10-14 11:49:46,068 [INFO] phase15_trainable_kernels: Fold 2 N=3000 RBF KTA optimized in 12.88s (CKTA=0.6671, gamma=[0.000050, 0.002830])
+2026-10-14 11:50:17,512 [INFO] phase15_trainable_kernels: Fold 2 completed in 154.13s
+2026-10-14 11:50:17,518 [INFO] phase15_trainable_kernels: --- Seed 42 | Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-14 11:50:42,602 [INFO] phase15_trainable_kernels: Fold 3 N=2000 QSVM KTA optimized in 10.09s (CKTA=0.6083, theta=[0.0286, 0.0341])
+2026-10-14 11:51:06,194 [INFO] phase15_trainable_kernels: Fold 3 N=2000 RBF KTA optimized in 12.91s (CKTA=0.6748, gamma=[0.000050, 0.002292])
+2026-10-14 11:51:45,341 [INFO] phase15_trainable_kernels: Fold 3 N=3000 QSVM KTA optimized in 9.94s (CKTA=0.6370, theta=[0.0287, 0.0345])
+2026-10-14 11:52:18,819 [INFO] phase15_trainable_kernels: Fold 3 N=3000 RBF KTA optimized in 15.67s (CKTA=0.6989, gamma=[0.000050, 0.002267])
+2026-10-14 11:52:50,750 [INFO] phase15_trainable_kernels: Fold 3 completed in 153.23s
+2026-10-14 11:52:50,754 [INFO] phase15_trainable_kernels: --- Seed 42 | Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-14 11:53:14,812 [INFO] phase15_trainable_kernels: Fold 4 N=2000 QSVM KTA optimized in 9.94s (CKTA=0.5724, theta=[0.0280, 0.0349])
+2026-10-14 11:53:40,988 [INFO] phase15_trainable_kernels: Fold 4 N=2000 RBF KTA optimized in 15.70s (CKTA=0.6372, gamma=[0.000050, 0.002630])
+2026-10-14 11:54:20,678 [INFO] phase15_trainable_kernels: Fold 4 N=3000 QSVM KTA optimized in 11.41s (CKTA=0.6258, theta=[0.0279, 0.0363])
+2026-10-14 11:54:55,647 [INFO] phase15_trainable_kernels: Fold 4 N=3000 RBF KTA optimized in 16.24s (CKTA=0.6964, gamma=[0.000050, 0.002425])
+2026-10-14 11:55:17,974 [INFO] phase15_trainable_kernels: Fold 4 completed in 147.22s
+2026-10-14 11:55:17,978 [INFO] phase15_trainable_kernels: --- Seed 42 | Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-14 11:55:42,259 [INFO] phase15_trainable_kernels: Fold 5 N=2000 QSVM KTA optimized in 10.16s (CKTA=0.5819, theta=[0.0282, 0.0345])
+2026-10-14 11:56:07,533 [INFO] phase15_trainable_kernels: Fold 5 N=2000 RBF KTA optimized in 13.58s (CKTA=0.6460, gamma=[0.000050, 0.002601])
+2026-10-14 11:56:46,494 [INFO] phase15_trainable_kernels: Fold 5 N=3000 QSVM KTA optimized in 9.87s (CKTA=0.6468, theta=[0.0283, 0.0346])
+2026-10-14 11:57:20,194 [INFO] phase15_trainable_kernels: Fold 5 N=3000 RBF KTA optimized in 14.60s (CKTA=0.7014, gamma=[0.000050, 0.002260])
+2026-10-14 11:57:46,572 [INFO] phase15_trainable_kernels: Fold 5 completed in 148.60s
+2026-10-14 11:57:48,323 [INFO] phase15_trainable_kernels: >>> Starting Seed 2/3 (Seed=101) <<<
+2026-10-14 11:57:48,342 [INFO] phase15_trainable_kernels: --- Seed 101 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 11:58:12,184 [INFO] phase15_trainable_kernels: Fold 1 N=2000 QSVM KTA optimized in 9.87s (CKTA=0.6266, theta=[0.0282, 0.0358])
+2026-10-14 11:58:37,428 [INFO] phase15_trainable_kernels: Fold 1 N=2000 RBF KTA optimized in 15.11s (CKTA=0.7034, gamma=[0.000050, 0.002741])
+2026-10-14 11:59:15,203 [INFO] phase15_trainable_kernels: Fold 1 N=3000 QSVM KTA optimized in 9.83s (CKTA=0.5771, theta=[0.0283, 0.0352])
+2026-10-14 11:59:48,966 [INFO] phase15_trainable_kernels: Fold 1 N=3000 RBF KTA optimized in 16.77s (CKTA=0.6457, gamma=[0.000050, 0.002473])
+2026-10-14 12:00:19,259 [INFO] phase15_trainable_kernels: Fold 1 completed in 150.92s
+2026-10-14 12:00:19,264 [INFO] phase15_trainable_kernels: --- Seed 101 | Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-14 12:00:42,977 [INFO] phase15_trainable_kernels: Fold 2 N=2000 QSVM KTA optimized in 9.84s (CKTA=0.6258, theta=[0.0285, 0.0356])
+2026-10-14 12:01:10,413 [INFO] phase15_trainable_kernels: Fold 2 N=2000 RBF KTA optimized in 17.34s (CKTA=0.6989, gamma=[0.000050, 0.002455])
+2026-10-14 12:01:49,084 [INFO] phase15_trainable_kernels: Fold 2 N=3000 QSVM KTA optimized in 9.90s (CKTA=0.6136, theta=[0.0283, 0.0355])
+2026-10-14 12:02:24,423 [INFO] phase15_trainable_kernels: Fold 2 N=3000 RBF KTA optimized in 16.64s (CKTA=0.6792, gamma=[0.000050, 0.002175])
+2026-10-14 12:02:58,722 [INFO] phase15_trainable_kernels: Fold 2 completed in 159.46s
+2026-10-14 12:02:58,727 [INFO] phase15_trainable_kernels: --- Seed 101 | Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-14 12:03:22,892 [INFO] phase15_trainable_kernels: Fold 3 N=2000 QSVM KTA optimized in 9.87s (CKTA=0.6350, theta=[0.0282, 0.0350])
+2026-10-14 12:03:49,049 [INFO] phase15_trainable_kernels: Fold 3 N=2000 RBF KTA optimized in 15.64s (CKTA=0.6859, gamma=[0.000050, 0.002153])
+2026-10-14 12:04:28,938 [INFO] phase15_trainable_kernels: Fold 3 N=3000 QSVM KTA optimized in 11.28s (CKTA=0.6386, theta=[0.0281, 0.0359])
+2026-10-14 12:05:00,735 [INFO] phase15_trainable_kernels: Fold 3 N=3000 RBF KTA optimized in 15.17s (CKTA=0.6967, gamma=[0.000050, 0.002304])
+2026-10-14 12:05:34,905 [INFO] phase15_trainable_kernels: Fold 3 completed in 156.18s
+2026-10-14 12:05:34,909 [INFO] phase15_trainable_kernels: --- Seed 101 | Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-14 12:06:00,117 [INFO] phase15_trainable_kernels: Fold 4 N=2000 QSVM KTA optimized in 11.24s (CKTA=0.6380, theta=[0.0280, 0.0362])
+2026-10-14 12:06:27,038 [INFO] phase15_trainable_kernels: Fold 4 N=2000 RBF KTA optimized in 16.30s (CKTA=0.7187, gamma=[0.000050, 0.002573])
+2026-10-14 12:07:07,440 [INFO] phase15_trainable_kernels: Fold 4 N=3000 QSVM KTA optimized in 9.87s (CKTA=0.6904, theta=[0.0288, 0.0354])
+2026-10-14 12:07:41,926 [INFO] phase15_trainable_kernels: Fold 4 N=3000 RBF KTA optimized in 15.65s (CKTA=0.7475, gamma=[0.000050, 0.002107])
+2026-10-14 12:08:32,780 [INFO] phase15_trainable_kernels: Fold 4 completed in 177.87s
+2026-10-14 12:08:32,785 [INFO] phase15_trainable_kernels: --- Seed 101 | Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-14 12:08:58,437 [INFO] phase15_trainable_kernels: Fold 5 N=2000 QSVM KTA optimized in 11.40s (CKTA=0.6482, theta=[0.0280, 0.0359])
+2026-10-14 12:09:27,261 [INFO] phase15_trainable_kernels: Fold 5 N=2000 RBF KTA optimized in 18.43s (CKTA=0.7202, gamma=[0.000050, 0.002474])
+2026-10-14 12:10:06,748 [INFO] phase15_trainable_kernels: Fold 5 N=3000 QSVM KTA optimized in 9.97s (CKTA=0.5912, theta=[0.0285, 0.0340])
+2026-10-14 12:10:41,952 [INFO] phase15_trainable_kernels: Fold 5 N=3000 RBF KTA optimized in 16.32s (CKTA=0.6449, gamma=[0.000050, 0.002244])
+2026-10-14 12:11:13,915 [INFO] phase15_trainable_kernels: Fold 5 completed in 161.13s
+2026-10-14 12:11:15,647 [INFO] phase15_trainable_kernels: >>> Starting Seed 3/3 (Seed=2024) <<<
+2026-10-14 12:11:15,664 [INFO] phase15_trainable_kernels: --- Seed 2024 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 12:11:40,463 [INFO] phase15_trainable_kernels: Fold 1 N=2000 QSVM KTA optimized in 9.99s (CKTA=0.5876, theta=[0.0279, 0.0352])
+2026-10-14 12:12:10,212 [INFO] phase15_trainable_kernels: Fold 1 N=2000 RBF KTA optimized in 16.97s (CKTA=0.6550, gamma=[0.000050, 0.002666])
+2026-10-14 12:12:50,765 [INFO] phase15_trainable_kernels: Fold 1 N=3000 QSVM KTA optimized in 11.38s (CKTA=0.6125, theta=[0.0283, 0.0354])
+2026-10-14 12:13:30,001 [INFO] phase15_trainable_kernels: Fold 1 N=3000 RBF KTA optimized in 14.67s (CKTA=0.6832, gamma=[0.000050, 0.002470])
+2026-10-14 12:13:59,258 [INFO] phase15_trainable_kernels: Fold 1 completed in 163.59s
+2026-10-14 12:13:59,262 [INFO] phase15_trainable_kernels: --- Seed 2024 | Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-14 12:14:24,874 [INFO] phase15_trainable_kernels: Fold 2 N=2000 QSVM KTA optimized in 9.93s (CKTA=0.6345, theta=[0.0290, 0.0342])
+2026-10-14 12:14:50,448 [INFO] phase15_trainable_kernels: Fold 2 N=2000 RBF KTA optimized in 14.09s (CKTA=0.6861, gamma=[0.000050, 0.002242])
+2026-10-14 12:15:32,100 [INFO] phase15_trainable_kernels: Fold 2 N=3000 QSVM KTA optimized in 9.97s (CKTA=0.6568, theta=[0.0290, 0.0351])
+2026-10-14 12:16:05,957 [INFO] phase15_trainable_kernels: Fold 2 N=3000 RBF KTA optimized in 15.73s (CKTA=0.7103, gamma=[0.000050, 0.002153])
+2026-10-14 12:16:41,518 [INFO] phase15_trainable_kernels: Fold 2 completed in 162.26s
+2026-10-14 12:16:41,523 [INFO] phase15_trainable_kernels: --- Seed 2024 | Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-14 12:17:08,185 [INFO] phase15_trainable_kernels: Fold 3 N=2000 QSVM KTA optimized in 10.06s (CKTA=0.6047, theta=[0.0288, 0.0352])
+2026-10-14 12:17:39,859 [INFO] phase15_trainable_kernels: Fold 3 N=2000 RBF KTA optimized in 16.92s (CKTA=0.6682, gamma=[0.000050, 0.002103])
+2026-10-14 12:18:29,804 [INFO] phase15_trainable_kernels: Fold 3 N=3000 QSVM KTA optimized in 11.46s (CKTA=0.6241, theta=[0.0283, 0.0357])
+2026-10-14 12:19:02,659 [INFO] phase15_trainable_kernels: Fold 3 N=3000 RBF KTA optimized in 15.67s (CKTA=0.7023, gamma=[0.000050, 0.002444])
+2026-10-14 12:19:32,580 [INFO] phase15_trainable_kernels: Fold 3 completed in 171.06s
+2026-10-14 12:19:32,587 [INFO] phase15_trainable_kernels: --- Seed 2024 | Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-14 12:19:59,149 [INFO] phase15_trainable_kernels: Fold 4 N=2000 QSVM KTA optimized in 9.89s (CKTA=0.6452, theta=[0.0288, 0.0352])
+2026-10-14 12:20:27,532 [INFO] phase15_trainable_kernels: Fold 4 N=2000 RBF KTA optimized in 14.08s (CKTA=0.6992, gamma=[0.000050, 0.002142])
+2026-10-14 12:21:08,141 [INFO] phase15_trainable_kernels: Fold 4 N=3000 QSVM KTA optimized in 9.98s (CKTA=0.5954, theta=[0.0283, 0.0354])
+2026-10-14 12:21:44,238 [INFO] phase15_trainable_kernels: Fold 4 N=3000 RBF KTA optimized in 16.25s (CKTA=0.6600, gamma=[0.000050, 0.002221])
+2026-10-14 12:22:40,392 [INFO] phase15_trainable_kernels: Fold 4 completed in 187.80s
+2026-10-14 12:22:40,399 [INFO] phase15_trainable_kernels: --- Seed 2024 | Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-14 12:23:06,784 [INFO] phase15_trainable_kernels: Fold 5 N=2000 QSVM KTA optimized in 9.81s (CKTA=0.5934, theta=[0.0286, 0.0358])
+2026-10-14 12:23:33,547 [INFO] phase15_trainable_kernels: Fold 5 N=2000 RBF KTA optimized in 15.34s (CKTA=0.6535, gamma=[0.000050, 0.002319])
+2026-10-14 12:24:19,498 [INFO] phase15_trainable_kernels: Fold 5 N=3000 QSVM KTA optimized in 9.94s (CKTA=0.6158, theta=[0.0291, 0.0342])
+2026-10-14 12:25:00,957 [INFO] phase15_trainable_kernels: Fold 5 N=3000 RBF KTA optimized in 16.87s (CKTA=0.6591, gamma=[0.000050, 0.001846])
+2026-10-14 12:25:35,876 [INFO] phase15_trainable_kernels: Fold 5 completed in 175.48s
+2026-10-14 12:25:37,637 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 12:25:37,637 [INFO] phase15_trainable_kernels: PHASE 15 BENCHMARK COMPLETE in 2434.32s (40.57 min). Peak Memory: 5283.52 MB
+2026-10-14 12:25:37,637 [INFO] phase15_trainable_kernels: ==================================================================
+2026-10-14 12:25:37,742 [INFO] phase15_runner: Saved full experiment metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase15/full_metrics.json
+2026-10-14 12:25:37,775 [INFO] phase15_runner: Saved summary CSV table to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase15/full_summary_table.csv
+2026-10-14 12:25:37,778 [INFO] phase15_runner: Saved per-fold details CSV to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase15/per_fold_details.csv

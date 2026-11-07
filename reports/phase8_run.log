@@ -1,0 +1,90 @@
+2026-10-13 18:28:25,586 [INFO] phase8_runner: ================================================================================
+2026-10-13 18:28:25,586 [INFO] phase8_runner: STARTING PHASE 8: COMPREHENSIVE QUANTUM FRAUD IMPROVEMENTS & AUDIT
+2026-10-13 18:28:25,586 [INFO] phase8_runner: ================================================================================
+2026-10-13 18:28:25,586 [INFO] phase8_runner: Loading training and validation partitions...
+2026-10-13 18:28:26,504 [INFO] phase8_runner: 
+--- STEP 1: Deep Quantum Kernel Diagnostics ---
+2026-10-13 18:28:26,529 [INFO] phase8_runner: Reference QSVM (ZZ reps=2) Diagnostics:
+2026-10-13 18:28:26,529 [INFO] phase8_runner:   Condition Number: 11329412009.44 | Eff Rank: 7.75 | Top-1 Energy: 33.41%
+2026-10-13 18:28:26,529 [INFO] phase8_runner:   Fraud-Fraud Similarity: 0.0484 | Fraud-Legit Similarity: 0.0667 | Ratio: 0.73x
+2026-10-13 18:28:26,529 [INFO] phase8_runner:   Uncentered KTA: 0.5883 | Centered KTA: 0.2772
+2026-10-13 18:28:27,160 [INFO] phase8_runner: Saved similarity distribution plot to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/figures/phase8/kernel_similarity_distributions.png
+2026-10-13 18:28:27,160 [INFO] phase8_runner: 
+--- STEP 2: Feature Selection Evaluation on Training Pool ---
+2026-10-13 18:28:27,177 [INFO] quantum_fraud.phase8: Evaluating feature selection strategies strictly on training pool...
+2026-10-13 18:28:27,866 [INFO] phase8_runner:   Baseline ANOVA F-Test (Phase 4B) (['V4', 'V10', 'V11', 'V12', 'V14', 'V16']): Linear PR-AUC=0.7459, RBF PR-AUC=0.8076
+2026-10-13 18:28:27,866 [INFO] phase8_runner:   Pool-Wide ANOVA F-Test (['V14', 'V12', 'V10', 'V11', 'V17', 'V16']): Linear PR-AUC=0.6898, RBF PR-AUC=0.8200
+2026-10-13 18:28:27,866 [INFO] phase8_runner:   Mutual Information (['V14', 'V17', 'V10', 'V12', 'V11', 'V3']): Linear PR-AUC=0.6803, RBF PR-AUC=0.8049
+2026-10-13 18:28:27,867 [INFO] phase8_runner:   ExtraTrees Gini Importance (['V14', 'V12', 'V11', 'V3', 'V17', 'V16']): Linear PR-AUC=0.6771, RBF PR-AUC=0.8049
+2026-10-13 18:28:27,867 [INFO] phase8_runner:   Univariate ROC-AUC (['V14', 'V12', 'V4', 'V10', 'V11', 'V3']): Linear PR-AUC=0.8094, RBF PR-AUC=0.8114
+2026-10-13 18:28:28,040 [INFO] phase8_runner: Saved feature selection comparison plot to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/figures/phase8/feature_selection_comparison.png
+2026-10-13 18:28:28,040 [INFO] phase8_runner: 
+--- STEP 3: Quantum Feature Map Architectural Variants ---
+2026-10-13 18:28:28,040 [INFO] quantum_fraud.phase8: Evaluating quantum feature map architectures on validation partition...
+2026-10-13 18:29:58,263 [INFO] phase8_runner:   Reference ZZFeatureMap (2 Reps, Linear, [0, π]): PR-AUC=0.6648, ROC-AUC=0.9612, Prec=4.96%, Rec=87.88%, FP=556, KTA=0.5883, EffRank=7.75
+2026-10-13 18:29:58,264 [INFO] phase8_runner:   Shallow ZZFeatureMap (1 Rep, Linear, [0, π]): PR-AUC=0.7002, ROC-AUC=0.9583, Prec=7.71%, Rec=87.88%, FP=347, KTA=0.6343, EffRank=5.42
+2026-10-13 18:29:58,264 [INFO] phase8_runner:   Rescaled ZZFeatureMap (1 Rep, Linear, [0, π/2]): PR-AUC=0.6188, ROC-AUC=0.9689, Prec=8.29%, Rec=87.88%, FP=321, KTA=0.6687, EffRank=3.84
+2026-10-13 18:29:58,264 [INFO] phase8_runner:   Circular ZZFeatureMap (2 Reps, Circular, [0, π]): PR-AUC=0.5931, ROC-AUC=0.9573, Prec=3.61%, Rec=87.88%, FP=775, KTA=0.5447, EffRank=11.85
+2026-10-13 18:29:58,264 [INFO] phase8_runner:   Separable ZFeatureMap (1 Rep, Product Kernel, [0, π]): PR-AUC=0.6241, ROC-AUC=0.9658, Prec=14.50%, Rec=87.88%, FP=171, KTA=0.7006, EffRank=2.73
+2026-10-13 18:29:58,264 [INFO] phase8_runner: 
+--- STEP 4: Option A Scalability (10%% Fraud, N=500, 1000, 2000, 3 Seeds) ---
+2026-10-13 18:29:58,264 [INFO] quantum_fraud.phase8: Executing Option A Scalability Experiment (10% fraud, N in [500, 1000, 2000], seeds=[42, 101, 2024])...
+2026-10-13 18:32:59,607 [INFO] phase8_runner:   N=500 (Fraud=50):
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     linear_svm        : PR-AUC=0.7935 ± 0.0109, FP=416.7
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     rbf_svm           : PR-AUC=0.8232 ± 0.0035, FP=76.7
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     qsvm_zz_r2_ref    : PR-AUC=0.3295 ± 0.1920, FP=444.3
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     qsvm_zz_r1_imp    : PR-AUC=0.3115 ± 0.1878, FP=431.0
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     qsvm_z_r1_sep     : PR-AUC=0.5223 ± 0.1119, FP=253.0
+2026-10-13 18:32:59,614 [INFO] phase8_runner:   N=1000 (Fraud=100):
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     linear_svm        : PR-AUC=0.8149 ± 0.0039, FP=310.3
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     rbf_svm           : PR-AUC=0.8235 ± 0.0041, FP=132.3
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     qsvm_zz_r2_ref    : PR-AUC=0.3842 ± 0.1658, FP=375.7
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     qsvm_zz_r1_imp    : PR-AUC=0.3967 ± 0.1027, FP=303.3
+2026-10-13 18:32:59,614 [INFO] phase8_runner:     qsvm_z_r1_sep     : PR-AUC=0.4925 ± 0.0528, FP=222.0
+2026-10-13 18:32:59,615 [INFO] phase8_runner:   N=2000 (Fraud=200):
+2026-10-13 18:32:59,615 [INFO] phase8_runner:     linear_svm        : PR-AUC=0.8212 ± 0.0058, FP=322.7
+2026-10-13 18:32:59,615 [INFO] phase8_runner:     rbf_svm           : PR-AUC=0.8219 ± 0.0024, FP=168.7
+2026-10-13 18:32:59,615 [INFO] phase8_runner:     qsvm_zz_r2_ref    : PR-AUC=0.3389 ± 0.0867, FP=379.3
+2026-10-13 18:32:59,615 [INFO] phase8_runner:     qsvm_zz_r1_imp    : PR-AUC=0.3671 ± 0.0653, FP=312.0
+2026-10-13 18:32:59,615 [INFO] phase8_runner:     qsvm_z_r1_sep     : PR-AUC=0.5504 ± 0.0442, FP=229.0
+2026-10-13 18:32:59,996 [INFO] phase8_runner: Saved Option A scalability plot to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/figures/phase8/option_a_scalability_curves.png
+2026-10-13 18:32:59,996 [INFO] phase8_runner: 
+--- STEP 5: Cost-Optimal Decision Threshold Calibration ---
+2026-10-13 18:33:17,714 [INFO] phase8_runner: Saved threshold cost curves plot to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/figures/phase8/threshold_tradeoffs_and_cost.png
+2026-10-13 18:33:17,714 [INFO] phase8_runner: 
+--- STEP 6: Paired Non-Parametric Bootstrap (1,000 Replicates) ---
+2026-10-13 18:33:54,024 [INFO] phase8_runner:   linear_svm_minus_reference_qsvm_zz2:
+2026-10-13 18:33:54,024 [INFO] phase8_runner:     delta_pr_auc    : Mean = +0.1697, 95% CI = [+0.0549, +0.3051] (STATISTICALLY SIGNIFICANT)
+2026-10-13 18:33:54,024 [INFO] phase8_runner:     delta_roc_auc   : Mean = +0.0174, 95% CI = [+0.0005, +0.0406] (STATISTICALLY SIGNIFICANT)
+2026-10-13 18:33:54,024 [INFO] phase8_runner:     delta_precision : Mean = +0.0577, 95% CI = [+0.0376, +0.0789] (STATISTICALLY SIGNIFICANT)
+2026-10-13 18:33:54,024 [INFO] phase8_runner:     delta_recall    : Mean = +0.0000, 95% CI = [+0.0000, +0.0000] (NOT SIGNIFICANT)
+2026-10-13 18:33:54,024 [INFO] phase8_runner:   rbf_svm_minus_reference_qsvm_zz2:
+2026-10-13 18:33:54,024 [INFO] phase8_runner:     delta_pr_auc    : Mean = +0.1598, 95% CI = [+0.0398, +0.2986] (STATISTICALLY SIGNIFICANT)
+2026-10-13 18:33:54,024 [INFO] phase8_runner:     delta_roc_auc   : Mean = +0.0243, 95% CI = [+0.0005, +0.0536] (STATISTICALLY SIGNIFICANT)
+2026-10-13 18:33:54,024 [INFO] phase8_runner:     delta_precision : Mean = +0.4583, 95% CI = [+0.3426, +0.5800] (STATISTICALLY SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner:     delta_recall    : Mean = +0.0000, 95% CI = [+0.0000, +0.0000] (NOT SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner:   improved_qsvm_zz1_minus_reference_qsvm_zz2:
+2026-10-13 18:33:54,025 [INFO] phase8_runner:     delta_pr_auc    : Mean = +0.0365, 95% CI = [-0.0758, +0.1467] (NOT SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner:     delta_roc_auc   : Mean = -0.0024, 95% CI = [-0.0235, +0.0129] (NOT SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner:     delta_precision : Mean = +0.0274, 95% CI = [+0.0174, +0.0390] (STATISTICALLY SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner:     delta_recall    : Mean = +0.0000, 95% CI = [+0.0000, +0.0000] (NOT SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner:   separable_qsvm_z1_minus_reference_qsvm_zz2:
+2026-10-13 18:33:54,025 [INFO] phase8_runner:     delta_pr_auc    : Mean = -0.0260, 95% CI = [-0.1609, +0.1355] (NOT SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner:     delta_roc_auc   : Mean = +0.0052, 95% CI = [-0.0106, +0.0232] (NOT SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner:     delta_precision : Mean = +0.0946, 95% CI = [+0.0627, +0.1285] (STATISTICALLY SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner:     delta_recall    : Mean = +0.0000, 95% CI = [+0.0000, +0.0000] (NOT SIGNIFICANT)
+2026-10-13 18:33:54,025 [INFO] phase8_runner: 
+--- STEP 7: Holdout Test Set Evaluation (56,746 samples) ---
+2026-10-13 18:33:54,219 [INFO] phase8_runner: Evaluating Improved Shallow QSVM (ZZ reps=1) on holdout test set...
+2026-10-13 18:34:44,700 [INFO] phase8_runner: Holdout Test Set Comparison:
+2026-10-13 18:34:44,701 [INFO] phase8_runner:   Canonical QSVM (Phase 6): PR-AUC = 0.4966, FP = 1627, Prec = 4.69%
+2026-10-13 18:34:44,701 [INFO] phase8_runner:   Shallow QSVM (ZZ reps=1): PR-AUC = 0.5652, FP = 930, Prec = 7.92%
+2026-10-13 18:34:44,701 [INFO] phase8_runner:   Shallow QSVM (τ*=0.709):   FP = 52, Prec = 56.67%, Recall = 71.58%
+2026-10-13 18:34:44,701 [INFO] phase8_runner:   Separable QSVM (Z reps=1): PR-AUC = 0.6173, FP = 465, Prec = 14.52%
+2026-10-13 18:34:44,806 [INFO] phase8_runner: Saved Phase 8 test predictions to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase8_test_predictions.csv
+2026-10-13 18:34:44,806 [INFO] phase8_runner: 
+--- STEP 8: Serializing Master Phase 8 Metrics ---
+2026-10-13 18:34:44,809 [INFO] phase8_runner: Master metrics successfully serialized to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase8_metrics.json
+2026-10-13 18:34:44,809 [INFO] phase8_runner: ================================================================================
+2026-10-13 18:34:44,809 [INFO] phase8_runner: PHASE 8 COMPLETE in 379.23 seconds (6.32 minutes)
+2026-10-13 18:34:44,809 [INFO] phase8_runner: ================================================================================

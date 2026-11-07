@@ -1,0 +1,50 @@
+{
+  "config": {
+    "model_family": "Classical Support Vector Machine",
+    "kernel": "rbf",
+    "class_weight": "balanced",
+    "C": 1.0,
+    "random_state": 42,
+    "train_samples": 226980,
+    "test_samples": 56746,
+    "n_features": 30,
+    "training_time_seconds": 59.8256,
+    "prediction_time_seconds": 37.6865
+  },
+  "evaluation_metrics": {
+    "confusion_matrix": {
+      "true_negatives": 56382,
+      "false_positives": 269,
+      "false_negatives": 29,
+      "true_positives": 66
+    },
+    "precision": 0.197,
+    "recall": 0.6947,
+    "f1_score": 0.307,
+    "specificity": 0.9953,
+    "balanced_accuracy": 0.845,
+    "pr_auc": 0.4138,
+    "roc_auc": 0.9651,
+    "classification_report_str": "                precision    recall  f1-score   support\n\nLegitimate (0)     0.9995    0.9953    0.9974     56651\n     Fraud (1)     0.1970    0.6947    0.3070        95\n\n      accuracy                         0.9947     56746\n     macro avg     0.5983    0.8450    0.6522     56746\n  weighted avg     0.9981    0.9947    0.9962     56746\n"
+  },
+  "training_cross_validation_comparison": {
+    "unweighted": {
+      "class_weight": null,
+      "mean_precision": 0.8741,
+      "mean_recall": 0.5846,
+      "mean_f1": 0.699,
+      "mean_pr_auc": 0.7622,
+      "mean_roc_auc": 0.9654,
+      "mean_fit_time_seconds": 0.4112
+    },
+    "balanced": {
+      "class_weight": "balanced",
+      "mean_precision": 0.0702,
+      "mean_recall": 0.9021,
+      "mean_f1": 0.1303,
+      "mean_pr_auc": 0.735,
+      "mean_roc_auc": 0.9821,
+      "mean_fit_time_seconds": 0.6823
+    }
+  }
+}

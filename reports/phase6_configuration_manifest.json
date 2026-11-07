@@ -1,0 +1,300 @@
+{
+  "manifest_version": "2.0 (Threshold Corrected)",
+  "timestamp_utc": "2026-10-23 09:31:19 UTC",
+  "status": "FROZEN_VALIDATION_CALIBRATED",
+  "models": {
+    "tuned_linear_svm": {
+      "path": "/Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/models/quantum/tuned_linear_svm.joblib",
+      "sha256": "c03269e69de6f94013f14cfeb840e763b8d4b4c3818f3f873ecd0e4d25295c4b",
+      "hyperparameters": {
+        "C": 5.0,
+        "random_state": 42
+      },
+      "expected_phase5_cv_pr_auc": 0.9630071191305412,
+      "n_features": 6
+    },
+    "tuned_rbf_svm": {
+      "path": "/Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/models/quantum/tuned_rbf_svm.joblib",
+      "sha256": "bb71fe9d10f935c1a52a758a3f04b56af89470a38ddb81a91153e57d57a6975e",
+      "hyperparameters": {
+        "C": 5.0,
+        "gamma": 0.01,
+        "random_state": 42
+      },
+      "expected_phase5_cv_pr_auc": 0.9676461795514429,
+      "n_features": 6
+    },
+    "tuned_qsvm": {
+      "path": "/Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/models/quantum/tuned_qsvm.joblib",
+      "sha256": "dfa4bc6faf2f69b36e7e4f40fe95240db03cea9fca2665f49ad0fd28c4591c6f",
+      "hyperparameters": {
+        "C": 0.5,
+        "kernel": "precomputed",
+        "random_state": 42
+      },
+      "expected_phase5_cv_pr_auc": 0.937644548472622,
+      "n_features": 6
+    },
+    "historical_classical_svm_30f": {
+      "path": "/Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/models/classical_svm.joblib",
+      "sha256": "7573db12cd04dfcfb0a44ed05f0e5373841bc1253e11acc270019e9c62229b3e",
+      "n_features": 30,
+      "training_samples": 226980,
+      "holdout_evaluation_status": "HISTORICAL_BASELINE_REUSE_DISCLOSED",
+      "disclosure": "The 30-feature Classical SVM was trained on 226,980 samples in Phase 3 and evaluated on the holdout test set (56,746 samples) in Phase 3. It is included strictly as a historical benchmark for context. The three 6-feature models are evaluated on this holdout for the first time."
+    }
+  },
+  "preprocessing": {
+    "feature_selector": {
+      "path": "/Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/quantum/feature_selector.joblib",
+      "sha256": "57a95cffdcd46692534b1d32369973c9639aed0231e0c77032fa6f8553257290",
+      "selected_features": [
+        "V4",
+        "V10",
+        "V11",
+        "V12",
+        "V14",
+        "V16"
+      ]
+    },
+    "angle_scaler": {
+      "path": "/Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/quantum/angle_scaler.joblib",
+      "sha256": "3f5ba77aeab2fae9f8de55142c37d2a2e5ddce46ddaf71f3553b86ae612c1245",
+      "target_range": [
+        0.0,
+        3.141592653589793
+      ]
+    },
+    "training_subset": {
+      "X_train_path": "/Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/quantum/X_train_q_scaled.csv",
+      "X_train_sha256": "631aed41c30ef34fd0dda5de71e6fc406dc9b346b560593c1465998c0a5c1768",
+      "y_train_path": "/Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/quantum/y_train_q.csv",
+      "y_train_sha256": "0210e9022fc8e30da2eb68788c91a807bc8e220f9b7558b728ef101e2288b01e",
+      "total_samples": 500,
+      "legitimate_samples": 400,
+      "fraud_samples": 100
+    },
+    "quantum_feature_map": {
+      "circuit_type": "ZZFeatureMap",
+      "qubits": 6,
+      "reps": 2,
+      "entanglement": "linear",
+      "kernel_type": "exact_fidelity_statevector"
+    }
+  },
+  "frozen_decision_cutoffs": {
+    "default": 0.0,
+    "cost_optimal_by_scenario_ratio": {
+      "linear_svm": {
+        "5": 1.024647146669654,
+        "20": 1.024647146669654,
+        "50": 1.024647146669654,
+        "100": 1.024647146669654
+      },
+      "rbf_svm": {
+        "5": 0.46556977680855716,
+        "20": 0.46556977680855716,
+        "50": 0.46556977680855716,
+        "100": 0.46556977680855716
+      },
+      "qsvm": {
+        "5": 0.8651196039043426,
+        "20": 0.718022101882898,
+        "50": 0.718022101882898,
+        "100": 0.718022101882898
+      }
+    }
+  },
+  "audit_provenance_trail": {
+    "initial_phase4b_baseline_cutoffs_audit": {
+      "qsvm": {
+        "5": 0.8178322895666394,
+        "20": 0.6508975683647589,
+        "50": 0.6508975683647589,
+        "100": 0.6508975683647589
+      },
+      "linear_svm": {
+        "5": 1.094219893382241,
+        "20": 1.094219893382241,
+        "50": 0.5305348668407905,
+        "100": 0.5305348668407905
+      },
+      "rbf_svm": {
+        "5": 0.7292233022108354,
+        "20": 0.7292233022108354,
+        "50": 0.7292233022108354,
+        "100": 0.7292233022108354
+      }
+    },
+    "correction_rationale": "Initial cutoffs in phase5_metrics.json were computed on predictions_validation.csv from Phase 4B baseline C=1.0 models. Recalibrated to actual decision scores of tuned models on X_val_q_scaled.csv (N=20,000) with zero holdout test data access.",
+    "validation_performance_at_corrected_cutoffs": {
+      "linear_svm": {
+        "5": {
+          "cost_ratio_R": 5.0,
+          "c_fp": 10.0,
+          "c_fn": 50.0,
+          "optimal_threshold": 1.024647146669654,
+          "minimized_scenario_loss": 270.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.8055555555555556,
+          "false_positives": 7,
+          "false_negatives": 4,
+          "true_positives": 29
+        },
+        "20": {
+          "cost_ratio_R": 20.0,
+          "c_fp": 10.0,
+          "c_fn": 200.0,
+          "optimal_threshold": 1.024647146669654,
+          "minimized_scenario_loss": 870.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.8055555555555556,
+          "false_positives": 7,
+          "false_negatives": 4,
+          "true_positives": 29
+        },
+        "50": {
+          "cost_ratio_R": 50.0,
+          "c_fp": 10.0,
+          "c_fn": 500.0,
+          "optimal_threshold": 1.024647146669654,
+          "minimized_scenario_loss": 2070.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.8055555555555556,
+          "false_positives": 7,
+          "false_negatives": 4,
+          "true_positives": 29
+        },
+        "100": {
+          "cost_ratio_R": 100.0,
+          "c_fp": 10.0,
+          "c_fn": 1000.0,
+          "optimal_threshold": 1.024647146669654,
+          "minimized_scenario_loss": 4070.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.8055555555555556,
+          "false_positives": 7,
+          "false_negatives": 4,
+          "true_positives": 29
+        }
+      },
+      "rbf_svm": {
+        "5": {
+          "cost_ratio_R": 5.0,
+          "c_fp": 10.0,
+          "c_fn": 50.0,
+          "optimal_threshold": 0.46556977680855716,
+          "minimized_scenario_loss": 270.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.8055555555555556,
+          "false_positives": 7,
+          "false_negatives": 4,
+          "true_positives": 29
+        },
+        "20": {
+          "cost_ratio_R": 20.0,
+          "c_fp": 10.0,
+          "c_fn": 200.0,
+          "optimal_threshold": 0.46556977680855716,
+          "minimized_scenario_loss": 870.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.8055555555555556,
+          "false_positives": 7,
+          "false_negatives": 4,
+          "true_positives": 29
+        },
+        "50": {
+          "cost_ratio_R": 50.0,
+          "c_fp": 10.0,
+          "c_fn": 500.0,
+          "optimal_threshold": 0.46556977680855716,
+          "minimized_scenario_loss": 2070.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.8055555555555556,
+          "false_positives": 7,
+          "false_negatives": 4,
+          "true_positives": 29
+        },
+        "100": {
+          "cost_ratio_R": 100.0,
+          "c_fp": 10.0,
+          "c_fn": 1000.0,
+          "optimal_threshold": 0.46556977680855716,
+          "minimized_scenario_loss": 4070.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.8055555555555556,
+          "false_positives": 7,
+          "false_negatives": 4,
+          "true_positives": 29
+        }
+      },
+      "qsvm": {
+        "5": {
+          "cost_ratio_R": 5.0,
+          "c_fp": 10.0,
+          "c_fn": 50.0,
+          "optimal_threshold": 0.8651196039043426,
+          "minimized_scenario_loss": 440.0,
+          "resulting_recall": 0.8181818181818182,
+          "resulting_recall_fraction": "27/33",
+          "resulting_precision": 0.6585365853658537,
+          "false_positives": 14,
+          "false_negatives": 6,
+          "true_positives": 27
+        },
+        "20": {
+          "cost_ratio_R": 20.0,
+          "c_fp": 10.0,
+          "c_fn": 200.0,
+          "optimal_threshold": 0.718022101882898,
+          "minimized_scenario_loss": 1190.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.4264705882352941,
+          "false_positives": 39,
+          "false_negatives": 4,
+          "true_positives": 29
+        },
+        "50": {
+          "cost_ratio_R": 50.0,
+          "c_fp": 10.0,
+          "c_fn": 500.0,
+          "optimal_threshold": 0.718022101882898,
+          "minimized_scenario_loss": 2390.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.4264705882352941,
+          "false_positives": 39,
+          "false_negatives": 4,
+          "true_positives": 29
+        },
+        "100": {
+          "cost_ratio_R": 100.0,
+          "c_fp": 10.0,
+          "c_fn": 1000.0,
+          "optimal_threshold": 0.718022101882898,
+          "minimized_scenario_loss": 4390.0,
+          "resulting_recall": 0.8787878787878788,
+          "resulting_recall_fraction": "29/33",
+          "resulting_precision": 0.4264705882352941,
+          "false_positives": 39,
+          "false_negatives": 4,
+          "true_positives": 29
+        }
+      }
+    }
+  },
+  "evaluation_protocol": {
+    "test_set_fitting_permitted": false,
+    "hyperparameter_adaptation_permitted": false,
+    "threshold_retuning_on_holdout_permitted": false
+  }
+}

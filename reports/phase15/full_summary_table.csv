@@ -1,0 +1,11 @@
+sample_size,model,mean_oof_pr_auc,std_oof_pr_auc_sample,std_oof_pr_auc_pop,mean_oof_roc_auc,mean_default_precision,mean_default_recall,mean_calibrated_cost,std_calibrated_cost
+2000,baseline_classical_linear_k6,0.6974,0.0079,0.0065,0.9675,0.0818,0.8748,3168.0,64.37
+2000,p14_classical_rbf_k16,0.735,0.0011,0.0009,0.982,0.6481,0.8245,3568.67,220.08
+2000,p14_opt_separable_qsvm_k16,0.7363,0.0028,0.0023,0.9815,0.772,0.8025,3316.67,15.14
+2000,p15_kta_trainable_qsvm_k16,0.7356,0.0034,0.0028,0.9819,0.7414,0.8131,3284.0,95.69
+2000,p15_kta_trainable_rbf_k16,0.7163,0.0023,0.0019,0.9777,0.2157,0.8607,2962.67,195.81
+3000,baseline_classical_linear_k6,0.7024,0.0029,0.0024,0.9673,0.077,0.8757,3111.33,97.04
+3000,p14_classical_rbf_k16,0.7361,0.0023,0.0019,0.9829,0.5921,0.8298,3317.33,180.56
+3000,p14_opt_separable_qsvm_k16,0.7369,0.0019,0.0016,0.9824,0.689,0.8201,3188.0,164.47
+3000,p15_kta_trainable_qsvm_k16,0.7365,0.0024,0.002,0.9826,0.6743,0.821,3512.0,328.65
+3000,p15_kta_trainable_rbf_k16,0.7164,0.0042,0.0034,0.978,0.216,0.8616,2928.0,116.05

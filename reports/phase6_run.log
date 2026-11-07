@@ -1,0 +1,107 @@
+[2026-10-12 12:19:11] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 12:19:11] [INFO] [quantum_fraud.phase6]: STARTING PHASE 6: FINAL HOLDOUT EVALUATION AND CAPSTONE SYNTHESIS
+[2026-10-12 12:19:11] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 12:19:11] [INFO] [quantum_fraud.phase6]: === Phase 6 Step 1: Freezing and Verifying Artifacts ===
+[2026-10-12 12:19:11] [INFO] [quantum_fraud.phase6]: Configuration manifest successfully frozen and saved to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_configuration_manifest.json
+[2026-10-12 12:19:11] [INFO] [quantum_fraud.phase6]: Ingesting holdout test data: /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/X_test.csv, /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/y_test.csv
+[2026-10-12 12:19:12] [INFO] [quantum_fraud.phase6]: Precomputing / caching exact training statevectors for 500 samples...
+[2026-10-12 12:19:12] [INFO] [quantum_fraud.phase6]: Training statevectors verified bit-for-bit against saved K_train (max diff: 0.00e+00)
+[2026-10-12 12:19:12] [INFO] [quantum_fraud.phase6]: Executing tiny test benchmark on 100 samples...
+[2026-10-12 12:19:12] [INFO] [quantum_fraud.phase6]: Benchmark completed: 100 samples in 0.1259s (794.4 samples/sec). Matrix valid: True, Min: 0.0000, Max: 0.9991
+[2026-10-12 12:19:12] [INFO] [quantum_fraud.phase6]: Computing full test kernel: N_test=56746, N_train=500 in batches of 2000
+[2026-10-12 12:19:25] [INFO] [quantum_fraud.phase6]: Batch 5/29 (8000-10000 / 56746) completed in 2.63s (760.2 samples/sec)
+[2026-10-12 12:19:38] [INFO] [quantum_fraud.phase6]: Batch 10/29 (18000-20000 / 56746) completed in 2.56s (781.6 samples/sec)
+[2026-10-12 12:19:51] [INFO] [quantum_fraud.phase6]: Batch 15/29 (28000-30000 / 56746) completed in 2.58s (775.0 samples/sec)
+[2026-10-12 12:20:04] [INFO] [quantum_fraud.phase6]: Batch 20/29 (38000-40000 / 56746) completed in 2.86s (698.7 samples/sec)
+[2026-10-12 12:20:19] [INFO] [quantum_fraud.phase6]: Batch 25/29 (48000-50000 / 56746) completed in 2.91s (688.2 samples/sec)
+[2026-10-12 12:20:29] [INFO] [quantum_fraud.phase6]: Batch 29/29 (56000-56746 / 56746) completed in 0.96s (775.5 samples/sec)
+[2026-10-12 12:20:29] [INFO] [quantum_fraud.phase6]: Full test kernel computed in 76.06s (throughput: 746.1 samples/sec). Shape: (56746, 500), Min: 0.0000, Max: 1.0000
+[2026-10-12 12:20:29] [INFO] [quantum_fraud.phase6]: Saved test kernel to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/K_test.npy
+[2026-10-12 12:20:29] [INFO] [quantum_fraud.phase6]: === Phase 6 Step 3: Holdout Model Evaluation ===
+[2026-10-12 12:20:29] [INFO] [quantum_fraud.phase6]: Test set ground truth: N=56746 (Legitimate=56651, Fraud=95, Prevalence=0.1674%)
+[2026-10-12 12:20:49] [INFO] [quantum_fraud.phase6]: Historical Classical SVM (30 features, Phase 3): PR-AUC=0.4138, ROC-AUC=0.9651, Rec@0.0=0.6947 (66/95), Prec@0.0=0.1970, FP=269, FN=29
+[2026-10-12 12:20:49] [INFO] [quantum_fraud.phase6]: Tuned Linear SVM (6 features, C=5.0): PR-AUC=0.6723, ROC-AUC=0.9612, Rec@0.0=0.8526 (81/95), Prec@0.0=0.1193, FP=598, FN=14
+[2026-10-12 12:20:49] [INFO] [quantum_fraud.phase6]: Tuned RBF SVM (6 features, C=5.0, γ=0.01): PR-AUC=0.6713, ROC-AUC=0.9592, Rec@0.0=0.7895 (75/95), Prec@0.0=0.4870, FP=79, FN=20
+[2026-10-12 12:20:49] [INFO] [quantum_fraud.phase6]: Tuned QSVM (6 features, C=0.5, ZZ-Kernel): PR-AUC=0.4966, ROC-AUC=0.9600, Rec@0.0=0.8421 (80/95), Prec@0.0=0.0469, FP=1627, FN=15
+[2026-10-12 12:20:50] [INFO] [quantum_fraud.phase6]: Saved holdout predictions to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/predictions_test.csv
+[2026-10-12 12:20:50] [INFO] [quantum_fraud.phase6]: Saved complete Phase 6 test metrics to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_test_metrics.json
+[2026-10-12 12:20:51] [INFO] [quantum_fraud.phase6]: Generated 5 Phase 6 plots in /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/figures/phase6
+[2026-10-12 12:20:51] [INFO] [quantum_fraud.phase6]: Capstone synthesis report successfully generated and saved to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_final_evaluation_and_synthesis_report.md
+[2026-10-12 12:20:51] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 12:20:51] [INFO] [quantum_fraud.phase6]: PHASE 6 EXECUTION COMPLETE IN 98.14 SECONDS
+[2026-10-12 12:20:51] [INFO] [quantum_fraud.phase6]: All deliverables generated and verified.
+[2026-10-12 12:20:51] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:06:40] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:06:40] [INFO] [quantum_fraud.phase6]: STARTING PHASE 6: FINAL HOLDOUT EVALUATION AND CAPSTONE SYNTHESIS
+[2026-10-12 13:06:40] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:06:40] [INFO] [quantum_fraud.phase6]: === Phase 6 Step 1: Freezing and Verifying Artifacts ===
+[2026-10-12 13:06:40] [INFO] [quantum_fraud.phase6]: Configuration manifest successfully frozen and saved to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_configuration_manifest.json
+[2026-10-12 13:06:40] [INFO] [quantum_fraud.phase6]: Ingesting holdout test data: /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/X_test.csv, /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/y_test.csv
+[2026-10-12 13:06:41] [INFO] [quantum_fraud.phase6]: Precomputing / caching exact training statevectors for 500 samples...
+[2026-10-12 13:06:41] [INFO] [quantum_fraud.phase6]: Training statevectors verified bit-for-bit against saved K_train (max diff: 0.00e+00)
+[2026-10-12 13:06:41] [INFO] [quantum_fraud.phase6]: Executing tiny test benchmark on 100 samples...
+[2026-10-12 13:06:41] [INFO] [quantum_fraud.phase6]: Benchmark completed: 100 samples in 0.1282s (779.8 samples/sec). Matrix valid: True, Min: 0.0000, Max: 0.9991
+[2026-10-12 13:06:41] [INFO] [quantum_fraud.phase6]: Computing full test kernel: N_test=56746, N_train=500 in batches of 2000
+[2026-10-12 13:06:41] [INFO] [quantum_fraud.phase6]: Existing test kernel checkpoint detected at /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/K_test.npy. Verifying...
+[2026-10-12 13:06:42] [INFO] [quantum_fraud.phase6]: Checkpoint verified successfully! Skipping redundant computation.
+[2026-10-12 13:06:42] [INFO] [quantum_fraud.phase6]: === Phase 6 Step 3: Holdout Model Evaluation ===
+[2026-10-12 13:06:42] [INFO] [quantum_fraud.phase6]: Test set ground truth: N=56746 (Legitimate=56651, Fraud=95, Prevalence=0.1674%)
+[2026-10-12 13:07:00] [INFO] [quantum_fraud.phase6]: Historical Classical SVM (30 features, Phase 3): PR-AUC=0.4138, ROC-AUC=0.9651, Rec@0.0=0.6947 (66/95), Prec@0.0=0.1970, FP=269, FN=29
+[2026-10-12 13:07:00] [INFO] [quantum_fraud.phase6]: Tuned Linear SVM (6 features, C=5.0): PR-AUC=0.6723, ROC-AUC=0.9612, Rec@0.0=0.8526 (81/95), Prec@0.0=0.1193, FP=598, FN=14
+[2026-10-12 13:07:01] [INFO] [quantum_fraud.phase6]: Tuned RBF SVM (6 features, C=5.0, γ=0.01): PR-AUC=0.6713, ROC-AUC=0.9592, Rec@0.0=0.7895 (75/95), Prec@0.0=0.4870, FP=79, FN=20
+[2026-10-12 13:07:01] [INFO] [quantum_fraud.phase6]: Tuned QSVM (6 features, C=0.5, ZZ-Kernel): PR-AUC=0.4966, ROC-AUC=0.9600, Rec@0.0=0.8421 (80/95), Prec@0.0=0.0469, FP=1627, FN=15
+[2026-10-12 13:07:01] [INFO] [quantum_fraud.phase6]: Saved holdout predictions to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/predictions_test.csv
+[2026-10-12 13:07:01] [INFO] [quantum_fraud.phase6]: Saved complete Phase 6 test metrics to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_test_metrics.json
+[2026-10-12 13:07:02] [INFO] [quantum_fraud.phase6]: Generated 5 Phase 6 plots in /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/figures/phase6
+[2026-10-12 13:07:54] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:07:54] [INFO] [quantum_fraud.phase6]: STARTING PHASE 6: FINAL HOLDOUT EVALUATION AND CAPSTONE SYNTHESIS
+[2026-10-12 13:07:54] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:07:54] [INFO] [quantum_fraud.phase6]: === Phase 6 Step 1: Freezing and Verifying Artifacts ===
+[2026-10-12 13:07:54] [INFO] [quantum_fraud.phase6]: Configuration manifest successfully frozen and saved to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_configuration_manifest.json
+[2026-10-12 13:07:54] [INFO] [quantum_fraud.phase6]: Ingesting holdout test data: /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/X_test.csv, /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/y_test.csv
+[2026-10-12 13:07:55] [INFO] [quantum_fraud.phase6]: Precomputing / caching exact training statevectors for 500 samples...
+[2026-10-12 13:07:55] [INFO] [quantum_fraud.phase6]: Training statevectors verified bit-for-bit against saved K_train (max diff: 0.00e+00)
+[2026-10-12 13:07:55] [INFO] [quantum_fraud.phase6]: Executing tiny test benchmark on 100 samples...
+[2026-10-12 13:07:55] [INFO] [quantum_fraud.phase6]: Benchmark completed: 100 samples in 0.1283s (779.4 samples/sec). Matrix valid: True, Min: 0.0000, Max: 0.9991
+[2026-10-12 13:07:55] [INFO] [quantum_fraud.phase6]: Computing full test kernel: N_test=56746, N_train=500 in batches of 2000
+[2026-10-12 13:07:55] [INFO] [quantum_fraud.phase6]: Existing test kernel checkpoint detected at /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/K_test.npy. Verifying...
+[2026-10-12 13:07:56] [INFO] [quantum_fraud.phase6]: === Phase 6 Step 3: Holdout Model Evaluation ===
+[2026-10-12 13:07:56] [INFO] [quantum_fraud.phase6]: Test set ground truth: N=56746 (Legitimate=56651, Fraud=95, Prevalence=0.1674%)
+[2026-10-12 13:08:14] [INFO] [quantum_fraud.phase6]: Historical Classical SVM (30 features, Phase 3): PR-AUC=0.4138, ROC-AUC=0.9651, Rec@0.0=0.6947 (66/95), Prec@0.0=0.1970, FP=269, FN=29
+[2026-10-12 13:08:14] [INFO] [quantum_fraud.phase6]: Tuned Linear SVM (6 features, C=5.0): PR-AUC=0.6723, ROC-AUC=0.9612, Rec@0.0=0.8526 (81/95), Prec@0.0=0.1193, FP=598, FN=14
+[2026-10-12 13:08:14] [INFO] [quantum_fraud.phase6]: Tuned RBF SVM (6 features, C=5.0, γ=0.01): PR-AUC=0.6713, ROC-AUC=0.9592, Rec@0.0=0.7895 (75/95), Prec@0.0=0.4870, FP=79, FN=20
+[2026-10-12 13:08:15] [INFO] [quantum_fraud.phase6]: Tuned QSVM (6 features, C=0.5, ZZ-Kernel): PR-AUC=0.4966, ROC-AUC=0.9600, Rec@0.0=0.8421 (80/95), Prec@0.0=0.0469, FP=1627, FN=15
+[2026-10-12 13:08:15] [INFO] [quantum_fraud.phase6]: Saved holdout predictions to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/predictions_test.csv
+[2026-10-12 13:08:15] [INFO] [quantum_fraud.phase6]: Saved complete Phase 6 test metrics to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_test_metrics.json
+[2026-10-12 13:08:16] [INFO] [quantum_fraud.phase6]: Generated 5 Phase 6 plots in /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/figures/phase6
+[2026-10-12 13:08:16] [INFO] [quantum_fraud.phase6]: Capstone synthesis report successfully generated and saved to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_final_evaluation_and_synthesis_report.md
+[2026-10-12 13:08:16] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:08:16] [INFO] [quantum_fraud.phase6]: PHASE 6 EXECUTION COMPLETE IN 20.98 SECONDS
+[2026-10-12 13:08:16] [INFO] [quantum_fraud.phase6]: All deliverables generated and verified.
+[2026-10-12 13:08:16] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:19:34] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:19:34] [INFO] [quantum_fraud.phase6]: STARTING PHASE 6: FINAL HOLDOUT EVALUATION AND CAPSTONE SYNTHESIS
+[2026-10-12 13:19:34] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:19:34] [INFO] [quantum_fraud.phase6]: === Phase 6 Step 1: Freezing and Verifying Artifacts ===
+[2026-10-12 13:19:35] [INFO] [quantum_fraud.phase6]: Configuration manifest successfully frozen and saved to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_configuration_manifest.json
+[2026-10-12 13:19:35] [INFO] [quantum_fraud.phase6]: Ingesting holdout test data: /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/X_test.csv, /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/y_test.csv
+[2026-10-12 13:19:35] [INFO] [quantum_fraud.phase6]: Precomputing / caching exact training statevectors for 500 samples...
+[2026-10-12 13:19:35] [INFO] [quantum_fraud.phase6]: Training statevectors verified bit-for-bit against saved K_train (max diff: 0.00e+00)
+[2026-10-12 13:19:35] [INFO] [quantum_fraud.phase6]: Executing tiny test benchmark on 100 samples...
+[2026-10-12 13:19:36] [INFO] [quantum_fraud.phase6]: Benchmark completed: 100 samples in 0.1260s (793.6 samples/sec). Matrix valid: True, Min: 0.0000, Max: 0.9991
+[2026-10-12 13:19:36] [INFO] [quantum_fraud.phase6]: Computing full test kernel: N_test=56746, N_train=500 in batches of 2000
+[2026-10-12 13:19:36] [INFO] [quantum_fraud.phase6]: Existing test kernel checkpoint detected at /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/K_test.npy. Verifying...
+[2026-10-12 13:19:36] [INFO] [quantum_fraud.phase6]: === Phase 6 Step 3: Holdout Model Evaluation ===
+[2026-10-12 13:19:36] [INFO] [quantum_fraud.phase6]: Test set ground truth: N=56746 (Legitimate=56651, Fraud=95, Prevalence=0.1674%)
+[2026-10-12 13:19:55] [INFO] [quantum_fraud.phase6]: Historical Classical SVM (30 features, Phase 3): PR-AUC=0.4138, ROC-AUC=0.9651, Rec@0.0=0.6947 (66/95), Prec@0.0=0.1970, FP=269, FN=29
+[2026-10-12 13:19:55] [INFO] [quantum_fraud.phase6]: Tuned Linear SVM (6 features, C=5.0): PR-AUC=0.6723, ROC-AUC=0.9612, Rec@0.0=0.8526 (81/95), Prec@0.0=0.1193, FP=598, FN=14
+[2026-10-12 13:19:55] [INFO] [quantum_fraud.phase6]: Tuned RBF SVM (6 features, C=5.0, γ=0.01): PR-AUC=0.6713, ROC-AUC=0.9592, Rec@0.0=0.7895 (75/95), Prec@0.0=0.4870, FP=79, FN=20
+[2026-10-12 13:19:55] [INFO] [quantum_fraud.phase6]: Tuned QSVM (6 features, C=0.5, ZZ-Kernel): PR-AUC=0.4966, ROC-AUC=0.9600, Rec@0.0=0.8421 (80/95), Prec@0.0=0.0469, FP=1627, FN=15
+[2026-10-12 13:19:56] [INFO] [quantum_fraud.phase6]: Saved holdout predictions to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/predictions_test.csv
+[2026-10-12 13:19:56] [INFO] [quantum_fraud.phase6]: Saved complete Phase 6 test metrics to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_test_metrics.json
+[2026-10-12 13:19:57] [INFO] [quantum_fraud.phase6]: Generated 5 Phase 6 plots in /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/figures/phase6
+[2026-10-12 13:19:57] [INFO] [quantum_fraud.phase6]: Capstone synthesis report successfully generated and saved to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase6_final_evaluation_and_synthesis_report.md
+[2026-10-12 13:19:57] [INFO] [quantum_fraud.phase6]: ================================================================================
+[2026-10-12 13:19:57] [INFO] [quantum_fraud.phase6]: PHASE 6 EXECUTION COMPLETE IN 21.52 SECONDS
+[2026-10-12 13:19:57] [INFO] [quantum_fraud.phase6]: All deliverables generated and verified.
+[2026-10-12 13:19:57] [INFO] [quantum_fraud.phase6]: ================================================================================

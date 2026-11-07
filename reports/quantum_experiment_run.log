@@ -1,0 +1,97 @@
+[2026-10-11 21:18:34] [INFO] [quantum_fraud.runner]: ================================================================================
+[2026-10-11 21:18:34] [INFO] [quantum_fraud.runner]: Starting Phase 4B: Quantum Kernel SVM & Matched Classical Controls Experiment
+[2026-10-11 21:18:34] [INFO] [quantum_fraud.runner]: ================================================================================
+[2026-10-11 21:18:34] [INFO] [quantum_fraud.runner]: 
+--- Step 1: Quantum Subset Extraction and Transformation ---
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]: Selected Features: ['V4', 'V10', 'V11', 'V12', 'V14', 'V16']
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]: 
+--- Step 2: Running Tiny Pilot Benchmark (10 samples) ---
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]: Pilot Matrix Verification Diagnostics:
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   shape: [10, 10]
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   is_finite: True
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   min_value: 0.014028952814359683
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   max_value: 1.0
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   values_in_unit_interval: True
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   is_symmetric: True
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   max_symmetry_discrepancy: 0.0
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   diagonal_is_one: True
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   max_diagonal_discrepancy: 0.0
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   min_eigenvalue: 0.022030574125664427
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   is_positive_semi_definite: True
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   is_valid: True
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]: Projected Full Experiment Runtimes:
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   full_n_train: 500
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   full_n_val: 1000
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   estimated_train_kernel_seconds: 1.08
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   estimated_val_kernel_seconds: 2.12
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   estimated_total_runtime_seconds: 3.2
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]:   estimated_total_runtime_minutes: 0.05
+[2026-10-11 21:18:35] [INFO] [quantum_fraud.runner]: 
+--- Step 3: Computing Full Quantum Kernel Matrices (N_train=500, N_val=1000) ---
+[2026-10-11 21:18:36] [INFO] [quantum_fraud.runner]: K_train computed in 0.686s. Shape: (500, 500), Symmetric: True, PSD: True, Min: 0.0000, Max: 1.0000
+[2026-10-11 21:18:37] [INFO] [quantum_fraud.runner]: K_val computed in 1.321s. Shape: (1000, 500), Finite: True, Min: 0.0000, Max: 0.9999
+[2026-10-11 21:18:38] [INFO] [quantum_fraud.runner]: 
+--- Step 4: Training Quantum Kernel SVM (QSVM) ---
+[2026-10-11 21:18:38] [INFO] [quantum_fraud.runner]: QSVM Training time: 0.0028s, Inference time: 0.0023s
+[2026-10-11 21:18:38] [INFO] [quantum_fraud.runner]: 
+--- Step 5: Training Matched Classical Linear SVM Control ---
+[2026-10-11 21:18:38] [INFO] [quantum_fraud.runner]: 
+--- Step 6: Training Matched Classical RBF SVM Control ---
+[2026-10-11 21:18:38] [INFO] [quantum_fraud.runner]: 
+--- Step 7: Saving Predictions and Generating Visualizations ---
+[2026-10-11 21:18:38] [INFO] [quantum_fraud.runner]: Saved validation predictions to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/predictions_validation.csv
+[2026-10-11 21:18:39] [INFO] [quantum_fraud.runner]: Saved full experiment metrics to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/quantum/experiment_metrics.json
+[2026-10-11 21:18:39] [INFO] [quantum_fraud.runner]: Generated markdown report at /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/quantum_kernel_experiment_report.md
+[2026-10-11 21:18:39] [INFO] [quantum_fraud.runner]: 
+================================================================================
+[2026-10-11 21:18:39] [INFO] [quantum_fraud.runner]: Phase 4B Experiment Successfully Completed!
+[2026-10-11 21:18:39] [INFO] [quantum_fraud.runner]: ================================================================================
+[2026-10-11 21:31:38] [INFO] [quantum_fraud.runner]: ================================================================================
+[2026-10-11 21:31:38] [INFO] [quantum_fraud.runner]: Starting Phase 4B: Quantum Kernel SVM & Matched Classical Controls Experiment
+[2026-10-11 21:31:38] [INFO] [quantum_fraud.runner]: ================================================================================
+[2026-10-11 21:31:38] [INFO] [quantum_fraud.runner]: 
+--- Step 1: Quantum Subset Extraction and Transformation ---
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]: Selected Features: ['V4', 'V10', 'V11', 'V12', 'V14', 'V16']
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]: 
+--- Step 2: Running Tiny Pilot Benchmark (10 samples) ---
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]: Pilot Matrix Verification Diagnostics:
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   shape: [10, 10]
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   is_finite: True
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   min_value: 0.014028952814359683
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   max_value: 1.0
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   values_in_unit_interval: True
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   is_symmetric: True
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   max_symmetry_discrepancy: 0.0
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   diagonal_is_one: True
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   max_diagonal_discrepancy: 0.0
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   min_eigenvalue: 0.022030574125664427
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   is_positive_semi_definite: True
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   is_valid: True
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]: Projected Full Experiment Runtimes:
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   full_n_train: 500
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   full_n_val: 20000
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   estimated_train_kernel_seconds: 1.16
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   estimated_val_kernel_seconds: 44.58
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   estimated_total_runtime_seconds: 45.74
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]:   estimated_total_runtime_minutes: 0.76
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]: 
+--- Step 3: Computing Full Quantum Kernel Matrices (N_train=500, N_val=20000) ---
+[2026-10-11 21:31:40] [INFO] [quantum_fraud.runner]: K_train computed in 0.771s. Shape: (500, 500), Symmetric: True, PSD: True, Min: 0.0000, Max: 1.0000
+[2026-10-11 21:32:08] [INFO] [quantum_fraud.runner]: K_val computed in 27.182s. Shape: (20000, 500), Finite: True, Min: 0.0000, Max: 1.0000
+[2026-10-11 21:32:10] [INFO] [quantum_fraud.runner]: 
+--- Step 4: Training Quantum Kernel SVM (QSVM) ---
+[2026-10-11 21:32:10] [INFO] [quantum_fraud.runner]: QSVM Training time: 0.0051s, Inference time: 0.0388s
+[2026-10-11 21:32:10] [INFO] [quantum_fraud.runner]: 
+--- Step 5: Training Matched Classical Linear SVM Control ---
+[2026-10-11 21:32:10] [INFO] [quantum_fraud.runner]: 
+--- Step 6: Training Matched Classical RBF SVM Control ---
+[2026-10-11 21:32:11] [INFO] [quantum_fraud.runner]: 
+--- Step 7: Saving Predictions and Generating Visualizations ---
+[2026-10-11 21:32:11] [INFO] [quantum_fraud.runner]: Saved validation predictions to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/data/processed/quantum/predictions_validation.csv
+[2026-10-11 21:32:11] [INFO] [quantum_fraud.runner]: Saved full experiment metrics to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/quantum/experiment_metrics.json
+[2026-10-11 21:32:11] [INFO] [quantum_fraud.runner]: Generated markdown report at /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/quantum_kernel_experiment_report.md
+[2026-10-11 21:32:11] [INFO] [quantum_fraud.runner]: 
+================================================================================
+[2026-10-11 21:32:11] [INFO] [quantum_fraud.runner]: Phase 4B Experiment Successfully Completed!
+[2026-10-11 21:32:11] [INFO] [quantum_fraud.runner]: ================================================================================
+[2026-10-11 21:47:24] [INFO] [quantum_fraud.runner]: Generated markdown report at reports/quantum_kernel_experiment_report.md

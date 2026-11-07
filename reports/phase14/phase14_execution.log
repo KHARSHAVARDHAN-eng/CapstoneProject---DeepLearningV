@@ -1,0 +1,95 @@
+2026-10-14 07:16:28,588 [INFO] phase14_runner: ==================================================================
+2026-10-14 07:16:28,588 [INFO] phase14_runner: Starting Phase 14: Systematic Performance Optimization Runner
+2026-10-14 07:16:28,588 [INFO] phase14_runner: Mode: PILOT
+2026-10-14 07:16:28,588 [INFO] phase14_runner: Sample sizes: [2000] | Seeds: [42] | Chunk size: 5000
+2026-10-14 07:16:28,588 [INFO] phase14_runner: ==================================================================
+2026-10-14 07:16:28,588 [INFO] phase14_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 07:16:29,334 [INFO] phase14_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.75s
+2026-10-14 07:16:29,334 [INFO] phase14_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 07:16:29,334 [INFO] src.experiments.phase14_optimization: ==================================================================
+2026-10-14 07:16:29,334 [INFO] src.experiments.phase14_optimization: STARTING PHASE 14 OPTIMIZATION RUNNER (Pilot=True)
+2026-10-14 07:16:29,334 [INFO] src.experiments.phase14_optimization: Sample sizes: [2000] | Seeds: [42] | Dimensions: [6, 10, 16] | Total: 226980
+2026-10-14 07:16:29,334 [INFO] src.experiments.phase14_optimization: ==================================================================
+2026-10-14 07:16:29,334 [INFO] src.experiments.phase14_optimization: >>> Starting Seed 1/1 (Seed=42) <<<
+2026-10-14 07:16:29,350 [INFO] src.experiments.phase14_optimization: --- Seed 42 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 07:17:51,443 [INFO] src.experiments.phase14_optimization: Fold 1 completed in 82.09s
+2026-10-14 07:18:10,408 [INFO] phase14_runner: Saved pilot metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase14/pilot_metrics.json
+2026-10-14 07:21:06,071 [INFO] phase14_runner: ==================================================================
+2026-10-14 07:21:06,071 [INFO] phase14_runner: Starting Phase 14: Systematic Performance Optimization Runner
+2026-10-14 07:21:06,071 [INFO] phase14_runner: Mode: PILOT
+2026-10-14 07:21:06,071 [INFO] phase14_runner: Sample sizes: [2000] | Seeds: [42] | Chunk size: 5000
+2026-10-14 07:21:06,071 [INFO] phase14_runner: ==================================================================
+2026-10-14 07:21:06,071 [INFO] phase14_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 07:21:06,843 [INFO] phase14_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.77s
+2026-10-14 07:21:06,844 [INFO] phase14_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 07:21:06,844 [INFO] src.experiments.phase14_optimization: ==================================================================
+2026-10-14 07:21:06,844 [INFO] src.experiments.phase14_optimization: STARTING PHASE 14 OPTIMIZATION RUNNER (Pilot=True)
+2026-10-14 07:21:06,844 [INFO] src.experiments.phase14_optimization: Sample sizes: [2000] | Seeds: [42] | Dimensions: [6, 10, 16] | Total: 226980
+2026-10-14 07:21:06,844 [INFO] src.experiments.phase14_optimization: ==================================================================
+2026-10-14 07:21:06,844 [INFO] src.experiments.phase14_optimization: >>> Starting Seed 1/1 (Seed=42) <<<
+2026-10-14 07:21:06,861 [INFO] src.experiments.phase14_optimization: --- Seed 42 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 07:22:31,271 [INFO] src.experiments.phase14_optimization: Fold 1 completed in 84.41s
+2026-10-14 07:22:50,077 [INFO] phase14_runner: Saved pilot metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase14/pilot_metrics.json
+2026-10-14 08:32:29,339 [INFO] phase14_runner: ==================================================================
+2026-10-14 08:32:29,340 [INFO] phase14_runner: Starting Phase 14: Systematic Performance Optimization Runner
+2026-10-14 08:32:29,340 [INFO] phase14_runner: Mode: PILOT
+2026-10-14 08:32:29,340 [INFO] phase14_runner: Sample sizes: [2000] | Seeds: [42] | Chunk size: 5000
+2026-10-14 08:32:29,340 [INFO] phase14_runner: ==================================================================
+2026-10-14 08:32:29,340 [INFO] phase14_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 08:32:30,102 [INFO] phase14_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.76s
+2026-10-14 08:32:30,102 [INFO] phase14_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 08:32:30,102 [INFO] src.experiments.phase14_optimization: ==================================================================
+2026-10-14 08:32:30,102 [INFO] src.experiments.phase14_optimization: STARTING PHASE 14 OPTIMIZATION RUNNER (Pilot=True)
+2026-10-14 08:32:30,102 [INFO] src.experiments.phase14_optimization: Sample sizes: [2000] | Seeds: [42] | Dimensions: [6, 10, 16] | Total: 226980
+2026-10-14 08:32:30,102 [INFO] src.experiments.phase14_optimization: ==================================================================
+2026-10-14 08:32:30,102 [INFO] src.experiments.phase14_optimization: >>> Starting Seed 1/1 (Seed=42) <<<
+2026-10-14 08:32:30,118 [INFO] src.experiments.phase14_optimization: --- Seed 42 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 08:33:56,873 [INFO] src.experiments.phase14_optimization: Fold 1 completed in 86.76s
+2026-10-14 08:33:58,046 [INFO] phase14_runner: Saved pilot metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase14/pilot_metrics.json
+2026-10-14 08:34:24,505 [INFO] phase14_runner: ==================================================================
+2026-10-14 08:34:24,505 [INFO] phase14_runner: Starting Phase 14: Systematic Performance Optimization Runner
+2026-10-14 08:34:24,505 [INFO] phase14_runner: Mode: FULL
+2026-10-14 08:34:24,505 [INFO] phase14_runner: Sample sizes: [2000, 3000] | Seeds: [42, 101, 2024] | Chunk size: 5000
+2026-10-14 08:34:24,505 [INFO] phase14_runner: ==================================================================
+2026-10-14 08:34:24,505 [INFO] phase14_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 08:34:25,295 [INFO] phase14_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.79s
+2026-10-14 08:34:25,295 [INFO] phase14_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 08:34:25,295 [INFO] src.experiments.phase14_optimization: ==================================================================
+2026-10-14 08:34:25,295 [INFO] src.experiments.phase14_optimization: STARTING PHASE 14 OPTIMIZATION RUNNER (Pilot=False)
+2026-10-14 08:34:25,295 [INFO] src.experiments.phase14_optimization: Sample sizes: [2000, 3000] | Seeds: [42, 101, 2024] | Dimensions: [6, 10, 16] | Total: 226980
+2026-10-14 08:34:25,295 [INFO] src.experiments.phase14_optimization: ==================================================================
+2026-10-14 08:34:25,295 [INFO] src.experiments.phase14_optimization: >>> Starting Seed 1/3 (Seed=42) <<<
+2026-10-14 08:34:25,313 [INFO] src.experiments.phase14_optimization: --- Seed 42 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 08:40:20,726 [INFO] src.experiments.phase14_optimization: Fold 1 completed in 355.42s
+2026-10-14 08:40:20,734 [INFO] src.experiments.phase14_optimization: --- Seed 42 | Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-14 08:49:33,624 [INFO] src.experiments.phase14_optimization: Fold 2 completed in 394.71s
+2026-10-14 08:49:33,632 [INFO] src.experiments.phase14_optimization: --- Seed 42 | Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-14 09:17:45,277 [INFO] src.experiments.phase14_optimization: Fold 3 completed in 500.19s
+2026-10-14 09:17:45,286 [INFO] src.experiments.phase14_optimization: --- Seed 42 | Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-14 09:25:16,969 [INFO] src.experiments.phase14_optimization: Fold 4 completed in 451.68s
+2026-10-14 09:25:16,982 [INFO] src.experiments.phase14_optimization: --- Seed 42 | Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-14 09:32:14,138 [INFO] src.experiments.phase14_optimization: Fold 5 completed in 417.16s
+2026-10-14 09:32:23,334 [INFO] src.experiments.phase14_optimization: >>> Starting Seed 2/3 (Seed=101) <<<
+2026-10-14 09:32:23,358 [INFO] src.experiments.phase14_optimization: --- Seed 101 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 09:39:43,217 [INFO] src.experiments.phase14_optimization: Fold 1 completed in 439.87s
+2026-10-14 09:39:43,227 [INFO] src.experiments.phase14_optimization: --- Seed 101 | Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-14 09:46:49,456 [INFO] src.experiments.phase14_optimization: Fold 2 completed in 426.24s
+2026-10-14 09:46:49,463 [INFO] src.experiments.phase14_optimization: --- Seed 101 | Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-14 09:55:20,059 [INFO] src.experiments.phase14_optimization: Fold 3 completed in 510.59s
+2026-10-14 09:55:20,071 [INFO] src.experiments.phase14_optimization: --- Seed 101 | Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-14 10:03:11,350 [INFO] src.experiments.phase14_optimization: Fold 4 completed in 471.28s
+2026-10-14 10:03:11,358 [INFO] src.experiments.phase14_optimization: --- Seed 101 | Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-14 10:11:22,451 [INFO] src.experiments.phase14_optimization: Fold 5 completed in 491.10s
+2026-10-14 10:11:31,474 [INFO] src.experiments.phase14_optimization: >>> Starting Seed 3/3 (Seed=2024) <<<
+2026-10-14 10:11:31,496 [INFO] src.experiments.phase14_optimization: --- Seed 2024 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 10:18:49,454 [INFO] src.experiments.phase14_optimization: Fold 1 completed in 437.97s
+2026-10-14 10:18:49,467 [INFO] src.experiments.phase14_optimization: --- Seed 2024 | Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-14 10:26:12,618 [INFO] src.experiments.phase14_optimization: Fold 2 completed in 443.18s
+2026-10-14 10:26:12,627 [INFO] src.experiments.phase14_optimization: --- Seed 2024 | Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-14 10:33:18,749 [INFO] src.experiments.phase14_optimization: Fold 3 completed in 426.13s
+2026-10-14 10:33:18,762 [INFO] src.experiments.phase14_optimization: --- Seed 2024 | Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-14 10:40:09,838 [INFO] src.experiments.phase14_optimization: Fold 4 completed in 411.08s
+2026-10-14 10:40:09,850 [INFO] src.experiments.phase14_optimization: --- Seed 2024 | Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-14 10:47:04,231 [INFO] src.experiments.phase14_optimization: Fold 5 completed in 414.38s
+2026-10-14 10:47:13,325 [INFO] phase14_runner: Saved full experiment metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase14/full_metrics.json
+2026-10-14 10:47:13,378 [INFO] phase14_runner: Saved summary CSV table to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase14/full_summary_table.csv

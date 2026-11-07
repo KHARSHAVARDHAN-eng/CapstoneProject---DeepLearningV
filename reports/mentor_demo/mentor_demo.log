@@ -1,0 +1,35 @@
+2026-10-23 14:56:54,884 [INFO] mentor_demo: ===========================================================================
+2026-10-23 14:56:54,884 [INFO] mentor_demo: QUANTUM FRAUD DETECTION: CAPSTONE MENTOR DEMONSTRATION BENCHMARK
+2026-10-23 14:56:54,884 [INFO] mentor_demo: ===========================================================================
+2026-10-23 14:56:54,884 [INFO] mentor_demo: Random Seed: 42 | Chunk Size: 2500
+2026-10-23 14:56:54,884 [INFO] mentor_demo: Output Directory: /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo
+2026-10-23 14:56:54,884 [INFO] mentor_demo: Security Verification: Test dataset /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-23 14:56:54,884 [INFO] mentor_demo: Loading training database from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-23 14:56:55,717 [INFO] mentor_demo: Loaded Training DB: 226980 transactions (378 frauds, prevalence = 0.1665%)
+2026-10-23 14:56:55,740 [INFO] mentor_demo: Fold 0 Partition: Train=181584 (Frauds=303) | Val=45396 (Frauds=75, prevalence=0.1652%)
+2026-10-23 14:56:55,770 [INFO] mentor_demo: In-Fold ANOVA Feature Selection completed in 0.03s:
+2026-10-23 14:56:55,770 [INFO] mentor_demo:   Top 6 Features: ['V17', 'V14', 'V12', 'V10', 'V16', 'V3']
+2026-10-23 14:56:55,770 [INFO] mentor_demo:   Top 16 Features: ['V17', 'V14', 'V12', 'V10', 'V16', 'V3', 'V7', 'V11', 'V4', 'V18', 'V9', 'V1', 'V2', 'V5', 'V6', 'V19']
+2026-10-23 14:56:55,774 [INFO] mentor_demo: Training Subsample: N=2000 (Frauds=200, enriched prevalence=10.00%)
+2026-10-23 14:56:55,779 [INFO] mentor_demo: --- [1/6] Training Classical Linear SVM Baseline (K=6) ---
+2026-10-23 14:56:55,803 [INFO] mentor_demo:   Linear SVM fit in 0.02s, scored in 0.000s (0.00001 ms/sample)
+2026-10-23 14:56:55,803 [INFO] mentor_demo: --- [2/6] Training Fixed Classical RBF SVM (K=16, gamma=0.0005) ---
+2026-10-23 14:56:59,282 [INFO] mentor_demo:   Fixed RBF fit in 0.21s, scored in 3.272s (0.07208 ms/sample)
+2026-10-23 14:56:59,283 [INFO] mentor_demo: --- [3/6] Training Fixed Separable QSVM (K=16, beta=0.0306) ---
+2026-10-23 14:57:10,007 [INFO] mentor_demo:   Fixed QSVM fit in 0.85s, scored in 9.875s (0.21752 ms/sample)
+2026-10-23 14:57:10,008 [INFO] mentor_demo: --- [4/6] Training Trainable QSVM via Centered Regularized KTA (K=16, lambda=200.0) ---
+2026-10-23 14:57:20,000 [INFO] mentor_demo:   KTA Optimization in 9.99s: CKTA=0.5785, theta range=[0.0287, 0.0342]
+2026-10-23 14:57:30,168 [INFO] mentor_demo:   Trainable QSVM fit in 10.53s (opt: 9.99s), scored in 9.631s (0.21216 ms/sample)
+2026-10-23 14:57:30,169 [INFO] mentor_demo: --- [5/6] Training Trainable Classical RBF via Centered Regularized KTA (K=16, lambda=200.0) ---
+2026-10-23 14:57:45,883 [INFO] mentor_demo:   KTA Optimization in 15.71s: CKTA=0.6222, gamma range=[0.000050, 0.002061]
+2026-10-23 14:57:50,906 [INFO] mentor_demo:   Trainable RBF fit in 15.99s (opt: 15.71s), scored in 4.746s (0.10455 ms/sample)
+2026-10-23 14:57:50,907 [INFO] mentor_demo: --- [6/6] Training Macro Nystroem RBF Reference (Full Fold Train N=181,584, K=16) ---
+2026-10-23 14:58:06,725 [INFO] mentor_demo:   Macro Nystroem fit in 15.71s, scored in 0.040s (0.00087 ms/sample)
+2026-10-23 14:58:06,726 [INFO] mentor_demo: ===========================================================================
+2026-10-23 14:58:06,726 [INFO] mentor_demo: Benchmark Execution Complete in 71.84s (~1.20 min). Peak Memory: 2570.41 MB
+2026-10-23 14:58:06,726 [INFO] mentor_demo: ===========================================================================
+2026-10-23 14:58:07,003 [INFO] mentor_demo: Saved fresh benchmark results to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/mentor_demo_results.csv
+2026-10-23 14:58:07,544 [INFO] mentor_demo: Saved Figure 1: /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/pr_curves.png
+2026-10-23 14:58:08,323 [INFO] mentor_demo: Saved Figure 2: /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/confusion_matrices.png
+2026-10-23 14:58:08,591 [INFO] mentor_demo: Saved Figure 3: /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/model_metric_comparison.png
+2026-10-23 14:58:08,877 [INFO] mentor_demo: Saved Figure 4: /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/runtime_comparison.png

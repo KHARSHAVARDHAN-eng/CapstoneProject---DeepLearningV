@@ -1,0 +1,14 @@
+[2026-10-12 13:24:28] [INFO] [quantum_fraud.phase7]: ================================================================================
+[2026-10-12 13:24:28] [INFO] [quantum_fraud.phase7]: STARTING PHASE 7: TRAINING-SIZE SCALABILITY EXPERIMENT
+[2026-10-12 13:24:28] [INFO] [quantum_fraud.phase7]: ================================================================================
+[2026-10-12 13:24:29] [INFO] [quantum_fraud.phase7]: Sample Availability Verification: {'500': {'total_samples': 500, 'required_fraud': 100, 'required_legit': 400, 'available_fraud_pool': 345, 'available_legit_pool': 206635, 'feasible_without_validation_leakage': True, 'feasible_globally_in_ytrain': True, 'shortfall_fraud': 0, 'status': 'FEASIBLE'}, '1000': {'total_samples': 1000, 'required_fraud': 200, 'required_legit': 800, 'available_fraud_pool': 345, 'available_legit_pool': 206635, 'feasible_without_validation_leakage': True, 'feasible_globally_in_ytrain': True, 'shortfall_fraud': 0, 'status': 'FEASIBLE'}, '2000': {'total_samples': 2000, 'required_fraud': 400, 'required_legit': 1600, 'available_fraud_pool': 345, 'available_legit_pool': 206635, 'feasible_without_validation_leakage': False, 'feasible_globally_in_ytrain': False, 'shortfall_fraud': 55, 'status': 'INSUFFICIENT_FRAUD_EXAMPLES'}}
+[2026-10-12 13:24:29] [INFO] [quantum_fraud.phase7]: Executing training and evaluation for N = 500...
+[2026-10-12 13:25:47] [INFO] [quantum_fraud.phase7]: N=500 complete: QSVM PR-AUC=0.6648, RBF PR-AUC=0.8285, Linear PR-AUC=0.8386
+[2026-10-12 13:25:47] [INFO] [quantum_fraud.phase7]: Executing training and evaluation for N = 1000...
+[2026-10-12 13:27:07] [INFO] [quantum_fraud.phase7]: N=1000 complete: QSVM PR-AUC=0.3188, RBF PR-AUC=0.8238, Linear PR-AUC=0.8219
+[2026-10-12 13:27:07] [INFO] [quantum_fraud.phase7]: Saved Phase 7 metrics JSON to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase7_scalability_metrics.json
+[2026-10-12 13:27:08] [INFO] [quantum_fraud.phase7]: Generated 5 publication figures in /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/figures/phase7
+[2026-10-12 13:27:08] [INFO] [quantum_fraud.phase7]: Phase 7 scalability report saved to /Users/harsha/Desktop/quantum-fraud-detection(Capstone)/reports/phase7_scalability_report.md
+[2026-10-12 13:27:08] [INFO] [quantum_fraud.phase7]: ================================================================================
+[2026-10-12 13:27:08] [INFO] [quantum_fraud.phase7]: PHASE 7 COMPLETED IN 159.01 SECONDS
+[2026-10-12 13:27:08] [INFO] [quantum_fraud.phase7]: ================================================================================

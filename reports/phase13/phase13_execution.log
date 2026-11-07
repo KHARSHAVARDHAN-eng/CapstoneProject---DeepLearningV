@@ -1,0 +1,102 @@
+2026-10-14 00:09:45,064 [INFO] phase13_runner: ==================================================================
+2026-10-14 00:09:45,065 [INFO] phase13_runner: Starting Phase 13: Systematic Model Optimization Runner
+2026-10-14 00:09:45,065 [INFO] phase13_runner: Mode: PILOT (Fold 0)
+2026-10-14 00:09:45,065 [INFO] phase13_runner: Sample sizes: [500, 1000, 2000] | Seed: 42 | Chunk size: 5000
+2026-10-14 00:09:45,065 [INFO] phase13_runner: ==================================================================
+2026-10-14 00:09:45,065 [INFO] phase13_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 00:09:45,932 [INFO] phase13_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.87s
+2026-10-14 00:09:45,933 [INFO] phase13_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 00:09:45,933 [INFO] phase13_runner: Executing Phase 13 Stage 2 Pilot Experiment...
+2026-10-14 00:09:45,933 [INFO] src.experiments.phase13_optimization: Initializing Phase 13 Pilot on Fold 0 (sample_sizes=[500, 1000, 2000], seed=42)...
+2026-10-14 00:09:45,964 [INFO] src.experiments.phase13_optimization: Fold 0: Train=181584 (frauds=303), Val=45396 (frauds=75, prevalence=0.001652)
+2026-10-14 00:09:46,021 [INFO] src.experiments.phase13_optimization: Selected top-6 features in 0.057s: ['V17', 'V14', 'V12', 'V10', 'V16', 'V3']
+2026-10-14 00:09:46,026 [INFO] src.experiments.phase13_optimization: Nested subsets generated in 0.006s.
+2026-10-14 00:09:46,030 [INFO] src.experiments.phase13_optimization: === Benchmarking Training Size N=500 ===
+2026-10-14 00:10:18,529 [INFO] src.experiments.phase13_optimization: Completed N=500 in 32.50s. PR-AUCs: RBF=0.7536, OptQSVM=0.7283, Lin=0.7352, ZZ=0.5521, PQK=0.5983
+2026-10-14 00:10:18,530 [INFO] src.experiments.phase13_optimization: === Benchmarking Training Size N=1000 ===
+2026-10-14 00:10:56,399 [INFO] src.experiments.phase13_optimization: Completed N=1000 in 37.87s. PR-AUCs: RBF=0.7368, OptQSVM=0.7102, Lin=0.7203, ZZ=0.5169, PQK=0.5302
+2026-10-14 00:10:56,400 [INFO] src.experiments.phase13_optimization: === Benchmarking Training Size N=2000 ===
+2026-10-14 00:11:45,849 [INFO] src.experiments.phase13_optimization: Completed N=2000 in 49.45s. PR-AUCs: RBF=0.7284, OptQSVM=0.7082, Lin=0.7027, ZZ=0.5158, PQK=0.5485
+2026-10-14 00:11:45,851 [INFO] src.experiments.phase13_optimization: Fitting Macro Full-Fold Classical Linear SVM (N=181584)...
+2026-10-14 00:11:48,531 [INFO] src.experiments.phase13_optimization: Fitting Macro Full-Fold Classical RBF SVM (N=181584, max_iter=5000)...
+2026-10-14 00:12:11,506 [INFO] src.experiments.phase13_optimization: Phase 13 Pilot completed successfully in 145.58s (Peak RAM: 1773.75 MB).
+2026-10-14 00:12:11,526 [INFO] phase13_runner: Saved pilot metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase13/pilot_metrics.json
+2026-10-14 00:23:21,367 [INFO] phase13_runner: ==================================================================
+2026-10-14 00:23:21,367 [INFO] phase13_runner: Starting Phase 13: Systematic Model Optimization Runner
+2026-10-14 00:23:21,367 [INFO] phase13_runner: Mode: PILOT
+2026-10-14 00:23:21,367 [INFO] phase13_runner: Sample sizes: [500, 1000, 2000] | Seeds: [42] | Chunk size: 5000
+2026-10-14 00:23:21,367 [INFO] phase13_runner: ==================================================================
+2026-10-14 00:23:21,367 [INFO] phase13_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 00:23:22,173 [INFO] phase13_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.81s
+2026-10-14 00:23:22,173 [INFO] phase13_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 00:23:22,173 [INFO] phase13_runner: Executing Phase 13 Stage 2 Pilot Experiment...
+2026-10-14 00:23:22,173 [INFO] src.experiments.phase13_optimization: Initializing Phase 13 Pilot on Fold 0 (sample_sizes=[500, 1000, 2000], seed=42)...
+2026-10-14 00:23:22,207 [INFO] src.experiments.phase13_optimization: Fold 0: Train=181584 (frauds=303), Val=45396 (frauds=75, prevalence=0.001652)
+2026-10-14 00:23:22,253 [INFO] src.experiments.phase13_optimization: Selected top-6 features in 0.046s: ['V17', 'V14', 'V12', 'V10', 'V16', 'V3']
+2026-10-14 00:23:22,259 [INFO] src.experiments.phase13_optimization: Nested subsets generated in 0.006s.
+2026-10-14 00:23:22,262 [INFO] src.experiments.phase13_optimization: === Benchmarking Training Size N=500 ===
+2026-10-14 00:23:54,727 [INFO] src.experiments.phase13_optimization: Completed N=500 in 32.47s. PR-AUCs: RBF=0.7536, OptQSVM=0.7283, Lin=0.7352, ZZ=0.5521, PQK=0.5983
+2026-10-14 00:23:54,728 [INFO] src.experiments.phase13_optimization: === Benchmarking Training Size N=1000 ===
+2026-10-14 00:24:31,963 [INFO] src.experiments.phase13_optimization: Completed N=1000 in 37.24s. PR-AUCs: RBF=0.7368, OptQSVM=0.7102, Lin=0.7203, ZZ=0.5169, PQK=0.5302
+2026-10-14 00:24:31,964 [INFO] src.experiments.phase13_optimization: === Benchmarking Training Size N=2000 ===
+2026-10-14 00:25:19,700 [INFO] src.experiments.phase13_optimization: Completed N=2000 in 47.74s. PR-AUCs: RBF=0.7284, OptQSVM=0.7082, Lin=0.7027, ZZ=0.5158, PQK=0.5485
+2026-10-14 00:25:19,700 [INFO] src.experiments.phase13_optimization: Fitting Macro Full-Fold Classical Linear SVM (N=181584)...
+2026-10-14 00:25:22,289 [INFO] src.experiments.phase13_optimization: Fitting Macro Nystroem Classical RBF Approximation (N=181584, n_components=300)...
+2026-10-14 00:25:33,696 [INFO] src.experiments.phase13_optimization: Phase 13 Pilot completed successfully in 131.53s (Peak RAM: 1773.74 MB).
+2026-10-14 00:25:33,732 [INFO] phase13_runner: Saved pilot metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase13/pilot_metrics.json
+2026-10-14 00:25:48,190 [INFO] phase13_runner: ==================================================================
+2026-10-14 00:25:48,190 [INFO] phase13_runner: Starting Phase 13: Systematic Model Optimization Runner
+2026-10-14 00:25:48,190 [INFO] phase13_runner: Mode: FULL
+2026-10-14 00:25:48,190 [INFO] phase13_runner: Sample sizes: [500, 1000, 2000] | Seeds: [42, 101, 2024] | Chunk size: 5000
+2026-10-14 00:25:48,190 [INFO] phase13_runner: ==================================================================
+2026-10-14 00:25:48,190 [INFO] phase13_runner: Loading training data from /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_train.csv...
+2026-10-14 00:25:48,954 [INFO] phase13_runner: Loaded X_train shape: (226980, 30), y_train shape: (226980,) (Frauds: 378) in 0.76s
+2026-10-14 00:25:48,955 [INFO] phase13_runner: Security Check: Test dataset path /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/data/processed/X_test.csv is strictly isolated (UNTOUCHED).
+2026-10-14 00:25:48,955 [INFO] phase13_runner: Executing Phase 13 Stage 3 Full Experiment (5 Folds x 3 Seeds)...
+2026-10-14 00:25:48,955 [INFO] src.experiments.phase13_optimization: ==================================================================
+2026-10-14 00:25:48,955 [INFO] src.experiments.phase13_optimization: LAUNCHING PHASE 13 FULL EXPERIMENT: 3 Seeds x 5-Fold CV x 3 Sizes
+2026-10-14 00:25:48,955 [INFO] src.experiments.phase13_optimization: Target Sizes: [500, 1000, 2000] | Seeds: [42, 101, 2024] | Total Train Pool: 226980
+2026-10-14 00:25:48,955 [INFO] src.experiments.phase13_optimization: ==================================================================
+2026-10-14 00:25:48,955 [INFO] src.experiments.phase13_optimization: >>> STARTING SEED 1/3 (Seed=42) <<<
+2026-10-14 00:25:48,970 [INFO] src.experiments.phase13_optimization: --- Seed 42 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 00:27:08,914 [INFO] src.experiments.phase13_optimization: Fold 1 completed in 79.95s.
+2026-10-14 00:27:08,917 [INFO] src.experiments.phase13_optimization: --- Seed 42 | Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-14 00:28:28,709 [INFO] src.experiments.phase13_optimization: Fold 2 completed in 79.80s.
+2026-10-14 00:28:28,712 [INFO] src.experiments.phase13_optimization: --- Seed 42 | Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-14 00:29:46,452 [INFO] src.experiments.phase13_optimization: Fold 3 completed in 77.74s.
+2026-10-14 00:29:46,455 [INFO] src.experiments.phase13_optimization: --- Seed 42 | Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-14 00:31:10,207 [INFO] src.experiments.phase13_optimization: Fold 4 completed in 83.75s.
+2026-10-14 00:31:10,216 [INFO] src.experiments.phase13_optimization: --- Seed 42 | Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-14 00:32:28,153 [INFO] src.experiments.phase13_optimization: Fold 5 completed in 77.94s.
+2026-10-14 00:32:28,154 [INFO] src.experiments.phase13_optimization: Computing Aggregate Out-Of-Fold Metrics for Seed 42 across 226,980 samples...
+2026-10-14 00:35:56,133 [INFO] src.experiments.phase13_optimization: >>> COMPLETED SEED 42 IN 607.20s (10.12 min) <<<
+2026-10-14 00:35:56,133 [INFO] src.experiments.phase13_optimization: >>> STARTING SEED 2/3 (Seed=101) <<<
+2026-10-14 00:35:56,159 [INFO] src.experiments.phase13_optimization: --- Seed 101 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 00:37:12,876 [INFO] src.experiments.phase13_optimization: Fold 1 completed in 76.72s.
+2026-10-14 00:37:12,879 [INFO] src.experiments.phase13_optimization: --- Seed 101 | Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-14 00:38:37,425 [INFO] src.experiments.phase13_optimization: Fold 2 completed in 84.55s.
+2026-10-14 00:38:37,428 [INFO] src.experiments.phase13_optimization: --- Seed 101 | Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-14 00:39:55,648 [INFO] src.experiments.phase13_optimization: Fold 3 completed in 78.22s.
+2026-10-14 00:39:55,651 [INFO] src.experiments.phase13_optimization: --- Seed 101 | Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-14 00:41:08,858 [INFO] src.experiments.phase13_optimization: Fold 4 completed in 73.21s.
+2026-10-14 00:41:08,861 [INFO] src.experiments.phase13_optimization: --- Seed 101 | Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-14 00:42:23,092 [INFO] src.experiments.phase13_optimization: Fold 5 completed in 74.23s.
+2026-10-14 00:42:23,093 [INFO] src.experiments.phase13_optimization: Computing Aggregate Out-Of-Fold Metrics for Seed 101 across 226,980 samples...
+2026-10-14 00:45:48,117 [INFO] src.experiments.phase13_optimization: >>> COMPLETED SEED 101 IN 591.99s (9.87 min) <<<
+2026-10-14 00:45:48,118 [INFO] src.experiments.phase13_optimization: >>> STARTING SEED 3/3 (Seed=2024) <<<
+2026-10-14 00:45:48,137 [INFO] src.experiments.phase13_optimization: --- Seed 2024 | Fold 1/5 (Train=181584, Val=45396) ---
+2026-10-14 00:47:05,954 [INFO] src.experiments.phase13_optimization: Fold 1 completed in 77.82s.
+2026-10-14 00:47:05,959 [INFO] src.experiments.phase13_optimization: --- Seed 2024 | Fold 2/5 (Train=181584, Val=45396) ---
+2026-10-14 00:48:25,837 [INFO] src.experiments.phase13_optimization: Fold 2 completed in 79.88s.
+2026-10-14 00:48:25,841 [INFO] src.experiments.phase13_optimization: --- Seed 2024 | Fold 3/5 (Train=181584, Val=45396) ---
+2026-10-14 00:49:44,142 [INFO] src.experiments.phase13_optimization: Fold 3 completed in 78.30s.
+2026-10-14 00:49:44,145 [INFO] src.experiments.phase13_optimization: --- Seed 2024 | Fold 4/5 (Train=181584, Val=45396) ---
+2026-10-14 00:51:02,863 [INFO] src.experiments.phase13_optimization: Fold 4 completed in 78.72s.
+2026-10-14 00:51:02,866 [INFO] src.experiments.phase13_optimization: --- Seed 2024 | Fold 5/5 (Train=181584, Val=45396) ---
+2026-10-14 00:52:20,567 [INFO] src.experiments.phase13_optimization: Fold 5 completed in 77.70s.
+2026-10-14 00:52:20,568 [INFO] src.experiments.phase13_optimization: Computing Aggregate Out-Of-Fold Metrics for Seed 2024 across 226,980 samples...
+2026-10-14 00:55:49,643 [INFO] src.experiments.phase13_optimization: >>> COMPLETED SEED 2024 IN 601.54s (10.03 min) <<<
+2026-10-14 00:55:49,643 [INFO] src.experiments.phase13_optimization: Aggregating statistics across 3 seeds...
+2026-10-14 00:55:49,651 [INFO] src.experiments.phase13_optimization: PHASE 13 FULL EXPERIMENT COMPLETED IN 1800.74s (30.01 min). Peak RAM: 2346.00 MB
+2026-10-14 00:55:49,709 [INFO] phase13_runner: Saved full experiment metrics to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase13/full_metrics.json
+2026-10-14 00:55:49,748 [INFO] phase13_runner: Saved summary CSV table to /Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/phase13/full_summary_table.csv

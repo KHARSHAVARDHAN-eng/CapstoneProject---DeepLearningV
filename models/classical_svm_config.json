@@ -1,0 +1,12 @@
+{
+  "model_family": "Classical Support Vector Machine",
+  "kernel": "rbf",
+  "class_weight": "balanced",
+  "C": 1.0,
+  "random_state": 42,
+  "train_samples": 226980,
+  "test_samples": 56746,
+  "n_features": 30,
+  "training_time_seconds": 59.8256,
+  "prediction_time_seconds": 37.6865
+}
