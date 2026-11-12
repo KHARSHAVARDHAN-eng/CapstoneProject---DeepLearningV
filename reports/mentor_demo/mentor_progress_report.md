@@ -165,7 +165,14 @@ Confusion Matrices on Unseen Validation Transactions (N_val = 45,396, Frauds = 7
    Precision: 10.81% | F1-Score: 0.1919 | False Alarm Rate (FPR): 1.1650%
 ```
 
-![Confusion Matrices](file:///Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/confusion_matrices.png)
+### Visual Confusion Matrices (Default Operating Point $\tau = 0.0$)
+![Confusion Matrices Default](file:///Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/confusion_matrices_default.png)
+
+### Visual Confusion Matrices (Prevalence-Calibrated Operating Point $\tau^*$)
+![Confusion Matrices Calibrated](file:///Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/confusion_matrices_calibrated.png)
+
+### Holdout Test Set Confusion Matrix Comparison ($N=56,746$)
+![Holdout Confusion Matrices Detailed](file:///Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/holdout_confusion_matrices_detailed.png)
 
 ---
 
@@ -190,7 +197,16 @@ Confusion Matrices on Unseen Validation Transactions (N_val = 45,396, Frauds = 7
 
 ## 8. Precision-Recall & Metric Visualizations
 
+### Decision Score Distribution Histograms (Class Separation)
+![Decision Score Histograms](file:///Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/model_score_histograms.png)
+
+### Model Performance Metrics Histogram & Comparative Distribution
+![Performance Metrics Histogram](file:///Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/model_performance_histogram.png)
+
+### Precision-Recall Curves
 ![Precision-Recall Curves](file:///Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/pr_curves.png)
+
+### Model Metrics Comparison Summary
 ![Model Metrics Comparison](file:///Users/harsha/Desktop/Projects-files/quantum-fraud-detection(Capstone)/reports/mentor_demo/model_metric_comparison.png)
 
 ---
